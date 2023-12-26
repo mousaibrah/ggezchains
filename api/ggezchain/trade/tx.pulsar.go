@@ -2143,6 +2143,1390 @@ func (x *fastReflection_MsgCreateTradeResponse) ProtoMethods() *protoiface.Metho
 	}
 }
 
+var (
+	md_MsgProcessTrade             protoreflect.MessageDescriptor
+	fd_MsgProcessTrade_creator     protoreflect.FieldDescriptor
+	fd_MsgProcessTrade_processType protoreflect.FieldDescriptor
+	fd_MsgProcessTrade_tradeIndex  protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_ggezchain_trade_tx_proto_init()
+	md_MsgProcessTrade = File_ggezchain_trade_tx_proto.Messages().ByName("MsgProcessTrade")
+	fd_MsgProcessTrade_creator = md_MsgProcessTrade.Fields().ByName("creator")
+	fd_MsgProcessTrade_processType = md_MsgProcessTrade.Fields().ByName("processType")
+	fd_MsgProcessTrade_tradeIndex = md_MsgProcessTrade.Fields().ByName("tradeIndex")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgProcessTrade)(nil)
+
+type fastReflection_MsgProcessTrade MsgProcessTrade
+
+func (x *MsgProcessTrade) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgProcessTrade)(x)
+}
+
+func (x *MsgProcessTrade) slowProtoReflect() protoreflect.Message {
+	mi := &file_ggezchain_trade_tx_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgProcessTrade_messageType fastReflection_MsgProcessTrade_messageType
+var _ protoreflect.MessageType = fastReflection_MsgProcessTrade_messageType{}
+
+type fastReflection_MsgProcessTrade_messageType struct{}
+
+func (x fastReflection_MsgProcessTrade_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgProcessTrade)(nil)
+}
+func (x fastReflection_MsgProcessTrade_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgProcessTrade)
+}
+func (x fastReflection_MsgProcessTrade_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgProcessTrade
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgProcessTrade) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgProcessTrade
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgProcessTrade) Type() protoreflect.MessageType {
+	return _fastReflection_MsgProcessTrade_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgProcessTrade) New() protoreflect.Message {
+	return new(fastReflection_MsgProcessTrade)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgProcessTrade) Interface() protoreflect.ProtoMessage {
+	return (*MsgProcessTrade)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgProcessTrade) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Creator != "" {
+		value := protoreflect.ValueOfString(x.Creator)
+		if !f(fd_MsgProcessTrade_creator, value) {
+			return
+		}
+	}
+	if x.ProcessType != "" {
+		value := protoreflect.ValueOfString(x.ProcessType)
+		if !f(fd_MsgProcessTrade_processType, value) {
+			return
+		}
+	}
+	if x.TradeIndex != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.TradeIndex)
+		if !f(fd_MsgProcessTrade_tradeIndex, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgProcessTrade) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTrade.creator":
+		return x.Creator != ""
+	case "ggezchain.trade.MsgProcessTrade.processType":
+		return x.ProcessType != ""
+	case "ggezchain.trade.MsgProcessTrade.tradeIndex":
+		return x.TradeIndex != uint64(0)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTrade"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTrade does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgProcessTrade) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTrade.creator":
+		x.Creator = ""
+	case "ggezchain.trade.MsgProcessTrade.processType":
+		x.ProcessType = ""
+	case "ggezchain.trade.MsgProcessTrade.tradeIndex":
+		x.TradeIndex = uint64(0)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTrade"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTrade does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgProcessTrade) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "ggezchain.trade.MsgProcessTrade.creator":
+		value := x.Creator
+		return protoreflect.ValueOfString(value)
+	case "ggezchain.trade.MsgProcessTrade.processType":
+		value := x.ProcessType
+		return protoreflect.ValueOfString(value)
+	case "ggezchain.trade.MsgProcessTrade.tradeIndex":
+		value := x.TradeIndex
+		return protoreflect.ValueOfUint64(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTrade"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTrade does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgProcessTrade) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTrade.creator":
+		x.Creator = value.Interface().(string)
+	case "ggezchain.trade.MsgProcessTrade.processType":
+		x.ProcessType = value.Interface().(string)
+	case "ggezchain.trade.MsgProcessTrade.tradeIndex":
+		x.TradeIndex = value.Uint()
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTrade"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTrade does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgProcessTrade) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTrade.creator":
+		panic(fmt.Errorf("field creator of message ggezchain.trade.MsgProcessTrade is not mutable"))
+	case "ggezchain.trade.MsgProcessTrade.processType":
+		panic(fmt.Errorf("field processType of message ggezchain.trade.MsgProcessTrade is not mutable"))
+	case "ggezchain.trade.MsgProcessTrade.tradeIndex":
+		panic(fmt.Errorf("field tradeIndex of message ggezchain.trade.MsgProcessTrade is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTrade"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTrade does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgProcessTrade) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTrade.creator":
+		return protoreflect.ValueOfString("")
+	case "ggezchain.trade.MsgProcessTrade.processType":
+		return protoreflect.ValueOfString("")
+	case "ggezchain.trade.MsgProcessTrade.tradeIndex":
+		return protoreflect.ValueOfUint64(uint64(0))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTrade"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTrade does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgProcessTrade) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in ggezchain.trade.MsgProcessTrade", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgProcessTrade) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgProcessTrade) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgProcessTrade) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgProcessTrade) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgProcessTrade)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Creator)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.ProcessType)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.TradeIndex != 0 {
+			n += 1 + runtime.Sov(uint64(x.TradeIndex))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgProcessTrade)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.TradeIndex != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.TradeIndex))
+			i--
+			dAtA[i] = 0x18
+		}
+		if len(x.ProcessType) > 0 {
+			i -= len(x.ProcessType)
+			copy(dAtA[i:], x.ProcessType)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.ProcessType)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if len(x.Creator) > 0 {
+			i -= len(x.Creator)
+			copy(dAtA[i:], x.Creator)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Creator)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgProcessTrade)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgProcessTrade: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgProcessTrade: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Creator = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field ProcessType", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.ProcessType = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 3:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TradeIndex", wireType)
+				}
+				x.TradeIndex = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.TradeIndex |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_MsgProcessTradeResponse             protoreflect.MessageDescriptor
+	fd_MsgProcessTradeResponse_tradeIndex  protoreflect.FieldDescriptor
+	fd_MsgProcessTradeResponse_status      protoreflect.FieldDescriptor
+	fd_MsgProcessTradeResponse_checker     protoreflect.FieldDescriptor
+	fd_MsgProcessTradeResponse_maker       protoreflect.FieldDescriptor
+	fd_MsgProcessTradeResponse_tradeData   protoreflect.FieldDescriptor
+	fd_MsgProcessTradeResponse_createDate  protoreflect.FieldDescriptor
+	fd_MsgProcessTradeResponse_updateDate  protoreflect.FieldDescriptor
+	fd_MsgProcessTradeResponse_processDate protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_ggezchain_trade_tx_proto_init()
+	md_MsgProcessTradeResponse = File_ggezchain_trade_tx_proto.Messages().ByName("MsgProcessTradeResponse")
+	fd_MsgProcessTradeResponse_tradeIndex = md_MsgProcessTradeResponse.Fields().ByName("tradeIndex")
+	fd_MsgProcessTradeResponse_status = md_MsgProcessTradeResponse.Fields().ByName("status")
+	fd_MsgProcessTradeResponse_checker = md_MsgProcessTradeResponse.Fields().ByName("checker")
+	fd_MsgProcessTradeResponse_maker = md_MsgProcessTradeResponse.Fields().ByName("maker")
+	fd_MsgProcessTradeResponse_tradeData = md_MsgProcessTradeResponse.Fields().ByName("tradeData")
+	fd_MsgProcessTradeResponse_createDate = md_MsgProcessTradeResponse.Fields().ByName("createDate")
+	fd_MsgProcessTradeResponse_updateDate = md_MsgProcessTradeResponse.Fields().ByName("updateDate")
+	fd_MsgProcessTradeResponse_processDate = md_MsgProcessTradeResponse.Fields().ByName("processDate")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgProcessTradeResponse)(nil)
+
+type fastReflection_MsgProcessTradeResponse MsgProcessTradeResponse
+
+func (x *MsgProcessTradeResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgProcessTradeResponse)(x)
+}
+
+func (x *MsgProcessTradeResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_ggezchain_trade_tx_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgProcessTradeResponse_messageType fastReflection_MsgProcessTradeResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgProcessTradeResponse_messageType{}
+
+type fastReflection_MsgProcessTradeResponse_messageType struct{}
+
+func (x fastReflection_MsgProcessTradeResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgProcessTradeResponse)(nil)
+}
+func (x fastReflection_MsgProcessTradeResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgProcessTradeResponse)
+}
+func (x fastReflection_MsgProcessTradeResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgProcessTradeResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgProcessTradeResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgProcessTradeResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgProcessTradeResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgProcessTradeResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgProcessTradeResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgProcessTradeResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgProcessTradeResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgProcessTradeResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgProcessTradeResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.TradeIndex != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.TradeIndex)
+		if !f(fd_MsgProcessTradeResponse_tradeIndex, value) {
+			return
+		}
+	}
+	if x.Status != "" {
+		value := protoreflect.ValueOfString(x.Status)
+		if !f(fd_MsgProcessTradeResponse_status, value) {
+			return
+		}
+	}
+	if x.Checker != "" {
+		value := protoreflect.ValueOfString(x.Checker)
+		if !f(fd_MsgProcessTradeResponse_checker, value) {
+			return
+		}
+	}
+	if x.Maker != "" {
+		value := protoreflect.ValueOfString(x.Maker)
+		if !f(fd_MsgProcessTradeResponse_maker, value) {
+			return
+		}
+	}
+	if x.TradeData != "" {
+		value := protoreflect.ValueOfString(x.TradeData)
+		if !f(fd_MsgProcessTradeResponse_tradeData, value) {
+			return
+		}
+	}
+	if x.CreateDate != "" {
+		value := protoreflect.ValueOfString(x.CreateDate)
+		if !f(fd_MsgProcessTradeResponse_createDate, value) {
+			return
+		}
+	}
+	if x.UpdateDate != "" {
+		value := protoreflect.ValueOfString(x.UpdateDate)
+		if !f(fd_MsgProcessTradeResponse_updateDate, value) {
+			return
+		}
+	}
+	if x.ProcessDate != "" {
+		value := protoreflect.ValueOfString(x.ProcessDate)
+		if !f(fd_MsgProcessTradeResponse_processDate, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgProcessTradeResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeIndex":
+		return x.TradeIndex != uint64(0)
+	case "ggezchain.trade.MsgProcessTradeResponse.status":
+		return x.Status != ""
+	case "ggezchain.trade.MsgProcessTradeResponse.checker":
+		return x.Checker != ""
+	case "ggezchain.trade.MsgProcessTradeResponse.maker":
+		return x.Maker != ""
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeData":
+		return x.TradeData != ""
+	case "ggezchain.trade.MsgProcessTradeResponse.createDate":
+		return x.CreateDate != ""
+	case "ggezchain.trade.MsgProcessTradeResponse.updateDate":
+		return x.UpdateDate != ""
+	case "ggezchain.trade.MsgProcessTradeResponse.processDate":
+		return x.ProcessDate != ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgProcessTradeResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeIndex":
+		x.TradeIndex = uint64(0)
+	case "ggezchain.trade.MsgProcessTradeResponse.status":
+		x.Status = ""
+	case "ggezchain.trade.MsgProcessTradeResponse.checker":
+		x.Checker = ""
+	case "ggezchain.trade.MsgProcessTradeResponse.maker":
+		x.Maker = ""
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeData":
+		x.TradeData = ""
+	case "ggezchain.trade.MsgProcessTradeResponse.createDate":
+		x.CreateDate = ""
+	case "ggezchain.trade.MsgProcessTradeResponse.updateDate":
+		x.UpdateDate = ""
+	case "ggezchain.trade.MsgProcessTradeResponse.processDate":
+		x.ProcessDate = ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgProcessTradeResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeIndex":
+		value := x.TradeIndex
+		return protoreflect.ValueOfUint64(value)
+	case "ggezchain.trade.MsgProcessTradeResponse.status":
+		value := x.Status
+		return protoreflect.ValueOfString(value)
+	case "ggezchain.trade.MsgProcessTradeResponse.checker":
+		value := x.Checker
+		return protoreflect.ValueOfString(value)
+	case "ggezchain.trade.MsgProcessTradeResponse.maker":
+		value := x.Maker
+		return protoreflect.ValueOfString(value)
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeData":
+		value := x.TradeData
+		return protoreflect.ValueOfString(value)
+	case "ggezchain.trade.MsgProcessTradeResponse.createDate":
+		value := x.CreateDate
+		return protoreflect.ValueOfString(value)
+	case "ggezchain.trade.MsgProcessTradeResponse.updateDate":
+		value := x.UpdateDate
+		return protoreflect.ValueOfString(value)
+	case "ggezchain.trade.MsgProcessTradeResponse.processDate":
+		value := x.ProcessDate
+		return protoreflect.ValueOfString(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTradeResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgProcessTradeResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeIndex":
+		x.TradeIndex = value.Uint()
+	case "ggezchain.trade.MsgProcessTradeResponse.status":
+		x.Status = value.Interface().(string)
+	case "ggezchain.trade.MsgProcessTradeResponse.checker":
+		x.Checker = value.Interface().(string)
+	case "ggezchain.trade.MsgProcessTradeResponse.maker":
+		x.Maker = value.Interface().(string)
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeData":
+		x.TradeData = value.Interface().(string)
+	case "ggezchain.trade.MsgProcessTradeResponse.createDate":
+		x.CreateDate = value.Interface().(string)
+	case "ggezchain.trade.MsgProcessTradeResponse.updateDate":
+		x.UpdateDate = value.Interface().(string)
+	case "ggezchain.trade.MsgProcessTradeResponse.processDate":
+		x.ProcessDate = value.Interface().(string)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgProcessTradeResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeIndex":
+		panic(fmt.Errorf("field tradeIndex of message ggezchain.trade.MsgProcessTradeResponse is not mutable"))
+	case "ggezchain.trade.MsgProcessTradeResponse.status":
+		panic(fmt.Errorf("field status of message ggezchain.trade.MsgProcessTradeResponse is not mutable"))
+	case "ggezchain.trade.MsgProcessTradeResponse.checker":
+		panic(fmt.Errorf("field checker of message ggezchain.trade.MsgProcessTradeResponse is not mutable"))
+	case "ggezchain.trade.MsgProcessTradeResponse.maker":
+		panic(fmt.Errorf("field maker of message ggezchain.trade.MsgProcessTradeResponse is not mutable"))
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeData":
+		panic(fmt.Errorf("field tradeData of message ggezchain.trade.MsgProcessTradeResponse is not mutable"))
+	case "ggezchain.trade.MsgProcessTradeResponse.createDate":
+		panic(fmt.Errorf("field createDate of message ggezchain.trade.MsgProcessTradeResponse is not mutable"))
+	case "ggezchain.trade.MsgProcessTradeResponse.updateDate":
+		panic(fmt.Errorf("field updateDate of message ggezchain.trade.MsgProcessTradeResponse is not mutable"))
+	case "ggezchain.trade.MsgProcessTradeResponse.processDate":
+		panic(fmt.Errorf("field processDate of message ggezchain.trade.MsgProcessTradeResponse is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgProcessTradeResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeIndex":
+		return protoreflect.ValueOfUint64(uint64(0))
+	case "ggezchain.trade.MsgProcessTradeResponse.status":
+		return protoreflect.ValueOfString("")
+	case "ggezchain.trade.MsgProcessTradeResponse.checker":
+		return protoreflect.ValueOfString("")
+	case "ggezchain.trade.MsgProcessTradeResponse.maker":
+		return protoreflect.ValueOfString("")
+	case "ggezchain.trade.MsgProcessTradeResponse.tradeData":
+		return protoreflect.ValueOfString("")
+	case "ggezchain.trade.MsgProcessTradeResponse.createDate":
+		return protoreflect.ValueOfString("")
+	case "ggezchain.trade.MsgProcessTradeResponse.updateDate":
+		return protoreflect.ValueOfString("")
+	case "ggezchain.trade.MsgProcessTradeResponse.processDate":
+		return protoreflect.ValueOfString("")
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.MsgProcessTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.MsgProcessTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgProcessTradeResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in ggezchain.trade.MsgProcessTradeResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgProcessTradeResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgProcessTradeResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgProcessTradeResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgProcessTradeResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgProcessTradeResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if x.TradeIndex != 0 {
+			n += 1 + runtime.Sov(uint64(x.TradeIndex))
+		}
+		l = len(x.Status)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Checker)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Maker)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.TradeData)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.CreateDate)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.UpdateDate)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.ProcessDate)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgProcessTradeResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.ProcessDate) > 0 {
+			i -= len(x.ProcessDate)
+			copy(dAtA[i:], x.ProcessDate)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.ProcessDate)))
+			i--
+			dAtA[i] = 0x42
+		}
+		if len(x.UpdateDate) > 0 {
+			i -= len(x.UpdateDate)
+			copy(dAtA[i:], x.UpdateDate)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.UpdateDate)))
+			i--
+			dAtA[i] = 0x3a
+		}
+		if len(x.CreateDate) > 0 {
+			i -= len(x.CreateDate)
+			copy(dAtA[i:], x.CreateDate)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.CreateDate)))
+			i--
+			dAtA[i] = 0x32
+		}
+		if len(x.TradeData) > 0 {
+			i -= len(x.TradeData)
+			copy(dAtA[i:], x.TradeData)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.TradeData)))
+			i--
+			dAtA[i] = 0x2a
+		}
+		if len(x.Maker) > 0 {
+			i -= len(x.Maker)
+			copy(dAtA[i:], x.Maker)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Maker)))
+			i--
+			dAtA[i] = 0x22
+		}
+		if len(x.Checker) > 0 {
+			i -= len(x.Checker)
+			copy(dAtA[i:], x.Checker)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Checker)))
+			i--
+			dAtA[i] = 0x1a
+		}
+		if len(x.Status) > 0 {
+			i -= len(x.Status)
+			copy(dAtA[i:], x.Status)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Status)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if x.TradeIndex != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.TradeIndex))
+			i--
+			dAtA[i] = 0x8
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgProcessTradeResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgProcessTradeResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgProcessTradeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TradeIndex", wireType)
+				}
+				x.TradeIndex = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.TradeIndex |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Status = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Checker", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Checker = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 4:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Maker", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Maker = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 5:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TradeData", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.TradeData = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 6:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CreateDate", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.CreateDate = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 7:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field UpdateDate", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.UpdateDate = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 8:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field ProcessDate", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.ProcessDate = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
 // Code generated by protoc-gen-go. DO NOT EDIT.
 // versions:
 // 	protoc-gen-go v1.27.0
@@ -2356,6 +3740,148 @@ func (x *MsgCreateTradeResponse) GetStatus() string {
 	return ""
 }
 
+type MsgProcessTrade struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Creator     string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	ProcessType string `protobuf:"bytes,2,opt,name=processType,proto3" json:"processType,omitempty"`
+	TradeIndex  uint64 `protobuf:"varint,3,opt,name=tradeIndex,proto3" json:"tradeIndex,omitempty"`
+}
+
+func (x *MsgProcessTrade) Reset() {
+	*x = MsgProcessTrade{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_ggezchain_trade_tx_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgProcessTrade) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgProcessTrade) ProtoMessage() {}
+
+// Deprecated: Use MsgProcessTrade.ProtoReflect.Descriptor instead.
+func (*MsgProcessTrade) Descriptor() ([]byte, []int) {
+	return file_ggezchain_trade_tx_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *MsgProcessTrade) GetCreator() string {
+	if x != nil {
+		return x.Creator
+	}
+	return ""
+}
+
+func (x *MsgProcessTrade) GetProcessType() string {
+	if x != nil {
+		return x.ProcessType
+	}
+	return ""
+}
+
+func (x *MsgProcessTrade) GetTradeIndex() uint64 {
+	if x != nil {
+		return x.TradeIndex
+	}
+	return 0
+}
+
+type MsgProcessTradeResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TradeIndex  uint64 `protobuf:"varint,1,opt,name=tradeIndex,proto3" json:"tradeIndex,omitempty"`
+	Status      string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Checker     string `protobuf:"bytes,3,opt,name=checker,proto3" json:"checker,omitempty"`
+	Maker       string `protobuf:"bytes,4,opt,name=maker,proto3" json:"maker,omitempty"`
+	TradeData   string `protobuf:"bytes,5,opt,name=tradeData,proto3" json:"tradeData,omitempty"`
+	CreateDate  string `protobuf:"bytes,6,opt,name=createDate,proto3" json:"createDate,omitempty"`
+	UpdateDate  string `protobuf:"bytes,7,opt,name=updateDate,proto3" json:"updateDate,omitempty"`
+	ProcessDate string `protobuf:"bytes,8,opt,name=processDate,proto3" json:"processDate,omitempty"`
+}
+
+func (x *MsgProcessTradeResponse) Reset() {
+	*x = MsgProcessTradeResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_ggezchain_trade_tx_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgProcessTradeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgProcessTradeResponse) ProtoMessage() {}
+
+// Deprecated: Use MsgProcessTradeResponse.ProtoReflect.Descriptor instead.
+func (*MsgProcessTradeResponse) Descriptor() ([]byte, []int) {
+	return file_ggezchain_trade_tx_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *MsgProcessTradeResponse) GetTradeIndex() uint64 {
+	if x != nil {
+		return x.TradeIndex
+	}
+	return 0
+}
+
+func (x *MsgProcessTradeResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *MsgProcessTradeResponse) GetChecker() string {
+	if x != nil {
+		return x.Checker
+	}
+	return ""
+}
+
+func (x *MsgProcessTradeResponse) GetMaker() string {
+	if x != nil {
+		return x.Maker
+	}
+	return ""
+}
+
+func (x *MsgProcessTradeResponse) GetTradeData() string {
+	if x != nil {
+		return x.TradeData
+	}
+	return ""
+}
+
+func (x *MsgProcessTradeResponse) GetCreateDate() string {
+	if x != nil {
+		return x.CreateDate
+	}
+	return ""
+}
+
+func (x *MsgProcessTradeResponse) GetUpdateDate() string {
+	if x != nil {
+		return x.UpdateDate
+	}
+	return ""
+}
+
+func (x *MsgProcessTradeResponse) GetProcessDate() string {
+	if x != nil {
+		return x.ProcessDate
+	}
+	return ""
+}
+
 var File_ggezchain_trade_tx_proto protoreflect.FileDescriptor
 
 var file_ggezchain_trade_tx_proto_rawDesc = []byte{
@@ -2402,30 +3928,60 @@ var file_ggezchain_trade_tx_proto_rawDesc = []byte{
 	0x12, 0x1e, 0x0a, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78,
 	0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x32, 0xc1, 0x01, 0x0a, 0x03, 0x4d, 0x73, 0x67,
-	0x12, 0x5a, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x12, 0x20, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61,
-	0x64, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61,
-	0x6d, 0x73, 0x1a, 0x28, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74,
-	0x72, 0x61, 0x64, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61,
-	0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x57, 0x0a, 0x0b,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x1f, 0x2e, 0x67, 0x67,
-	0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x4d, 0x73,
-	0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x72, 0x61, 0x64, 0x65, 0x1a, 0x27, 0x2e, 0x67,
+	0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x7b, 0x0a, 0x0f, 0x4d, 0x73, 0x67, 0x50,
+	0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x63,
+	0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x72,
+	0x65, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x20, 0x0a, 0x0b, 0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73,
+	0x54, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70, 0x72, 0x6f, 0x63,
+	0x65, 0x73, 0x73, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65,
+	0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x74, 0x72, 0x61,
+	0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x3a, 0x0c, 0x82, 0xe7, 0xb0, 0x2a, 0x07, 0x63, 0x72,
+	0x65, 0x61, 0x74, 0x6f, 0x72, 0x22, 0x81, 0x02, 0x0a, 0x17, 0x4d, 0x73, 0x67, 0x50, 0x72, 0x6f,
+	0x63, 0x65, 0x73, 0x73, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65,
+	0x78, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x68, 0x65,
+	0x63, 0x6b, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x68, 0x65, 0x63,
+	0x6b, 0x65, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x6d, 0x61, 0x6b, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x6d, 0x61, 0x6b, 0x65, 0x72, 0x12, 0x1c, 0x0a, 0x09, 0x74, 0x72, 0x61,
+	0x64, 0x65, 0x44, 0x61, 0x74, 0x61, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x74, 0x72,
+	0x61, 0x64, 0x65, 0x44, 0x61, 0x74, 0x61, 0x12, 0x1e, 0x0a, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x44, 0x61, 0x74, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x44, 0x61, 0x74, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x75, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x70, 0x72, 0x6f, 0x63, 0x65,
+	0x73, 0x73, 0x44, 0x61, 0x74, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70, 0x72,
+	0x6f, 0x63, 0x65, 0x73, 0x73, 0x44, 0x61, 0x74, 0x65, 0x32, 0x9d, 0x02, 0x0a, 0x03, 0x4d, 0x73,
+	0x67, 0x12, 0x5a, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d,
+	0x73, 0x12, 0x20, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72,
+	0x61, 0x64, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72,
+	0x61, 0x6d, 0x73, 0x1a, 0x28, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e,
+	0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50,
+	0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x57, 0x0a,
+	0x0b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x1f, 0x2e, 0x67,
 	0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x4d,
-	0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x05, 0x80, 0xe7, 0xb0, 0x2a, 0x01, 0x42, 0x9d, 0x01, 0x0a,
-	0x13, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74,
-	0x72, 0x61, 0x64, 0x65, 0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a,
-	0x20, 0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73, 0x73, 0x64, 0x6b, 0x2e, 0x69, 0x6f, 0x2f, 0x61, 0x70,
-	0x69, 0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64,
-	0x65, 0xa2, 0x02, 0x03, 0x47, 0x54, 0x58, 0xaa, 0x02, 0x0f, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68,
-	0x61, 0x69, 0x6e, 0x2e, 0x54, 0x72, 0x61, 0x64, 0x65, 0xca, 0x02, 0x0f, 0x47, 0x67, 0x65, 0x7a,
-	0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x54, 0x72, 0x61, 0x64, 0x65, 0xe2, 0x02, 0x1b, 0x47, 0x67,
-	0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x54, 0x72, 0x61, 0x64, 0x65, 0x5c, 0x47, 0x50,
-	0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x10, 0x47, 0x67, 0x65, 0x7a,
-	0x63, 0x68, 0x61, 0x69, 0x6e, 0x3a, 0x3a, 0x54, 0x72, 0x61, 0x64, 0x65, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x72, 0x61, 0x64, 0x65, 0x1a, 0x27, 0x2e,
+	0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e,
+	0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5a, 0x0a, 0x0c, 0x50, 0x72, 0x6f, 0x63, 0x65, 0x73,
+	0x73, 0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x20, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61,
+	0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x50, 0x72, 0x6f, 0x63,
+	0x65, 0x73, 0x73, 0x54, 0x72, 0x61, 0x64, 0x65, 0x1a, 0x28, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x50, 0x72,
+	0x6f, 0x63, 0x65, 0x73, 0x73, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x1a, 0x05, 0x80, 0xe7, 0xb0, 0x2a, 0x01, 0x42, 0x9d, 0x01, 0x0a, 0x13, 0x63, 0x6f,
+	0x6d, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64,
+	0x65, 0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x20, 0x63, 0x6f,
+	0x73, 0x6d, 0x6f, 0x73, 0x73, 0x64, 0x6b, 0x2e, 0x69, 0x6f, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x67,
+	0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0xa2, 0x02,
+	0x03, 0x47, 0x54, 0x58, 0xaa, 0x02, 0x0f, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e,
+	0x2e, 0x54, 0x72, 0x61, 0x64, 0x65, 0xca, 0x02, 0x0f, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61,
+	0x69, 0x6e, 0x5c, 0x54, 0x72, 0x61, 0x64, 0x65, 0xe2, 0x02, 0x1b, 0x47, 0x67, 0x65, 0x7a, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x5c, 0x54, 0x72, 0x61, 0x64, 0x65, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65,
+	0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x10, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61,
+	0x69, 0x6e, 0x3a, 0x3a, 0x54, 0x72, 0x61, 0x64, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -2440,22 +3996,26 @@ func file_ggezchain_trade_tx_proto_rawDescGZIP() []byte {
 	return file_ggezchain_trade_tx_proto_rawDescData
 }
 
-var file_ggezchain_trade_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_ggezchain_trade_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_ggezchain_trade_tx_proto_goTypes = []interface{}{
 	(*MsgUpdateParams)(nil),         // 0: ggezchain.trade.MsgUpdateParams
 	(*MsgUpdateParamsResponse)(nil), // 1: ggezchain.trade.MsgUpdateParamsResponse
 	(*MsgCreateTrade)(nil),          // 2: ggezchain.trade.MsgCreateTrade
 	(*MsgCreateTradeResponse)(nil),  // 3: ggezchain.trade.MsgCreateTradeResponse
-	(*Params)(nil),                  // 4: ggezchain.trade.Params
+	(*MsgProcessTrade)(nil),         // 4: ggezchain.trade.MsgProcessTrade
+	(*MsgProcessTradeResponse)(nil), // 5: ggezchain.trade.MsgProcessTradeResponse
+	(*Params)(nil),                  // 6: ggezchain.trade.Params
 }
 var file_ggezchain_trade_tx_proto_depIdxs = []int32{
-	4, // 0: ggezchain.trade.MsgUpdateParams.params:type_name -> ggezchain.trade.Params
+	6, // 0: ggezchain.trade.MsgUpdateParams.params:type_name -> ggezchain.trade.Params
 	0, // 1: ggezchain.trade.Msg.UpdateParams:input_type -> ggezchain.trade.MsgUpdateParams
 	2, // 2: ggezchain.trade.Msg.CreateTrade:input_type -> ggezchain.trade.MsgCreateTrade
-	1, // 3: ggezchain.trade.Msg.UpdateParams:output_type -> ggezchain.trade.MsgUpdateParamsResponse
-	3, // 4: ggezchain.trade.Msg.CreateTrade:output_type -> ggezchain.trade.MsgCreateTradeResponse
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
+	4, // 3: ggezchain.trade.Msg.ProcessTrade:input_type -> ggezchain.trade.MsgProcessTrade
+	1, // 4: ggezchain.trade.Msg.UpdateParams:output_type -> ggezchain.trade.MsgUpdateParamsResponse
+	3, // 5: ggezchain.trade.Msg.CreateTrade:output_type -> ggezchain.trade.MsgCreateTradeResponse
+	5, // 6: ggezchain.trade.Msg.ProcessTrade:output_type -> ggezchain.trade.MsgProcessTradeResponse
+	4, // [4:7] is the sub-list for method output_type
+	1, // [1:4] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -2516,6 +4076,30 @@ func file_ggezchain_trade_tx_proto_init() {
 				return nil
 			}
 		}
+		file_ggezchain_trade_tx_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgProcessTrade); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_ggezchain_trade_tx_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgProcessTradeResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -2523,7 +4107,7 @@ func file_ggezchain_trade_tx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_ggezchain_trade_tx_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

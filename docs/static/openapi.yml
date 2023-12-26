@@ -9059,6 +9059,66 @@ paths:
                 type: string
       tags:
         - Msg
+  /ggezchain.trade.Msg/ProcessTrade:
+    post:
+      operationId: GgezchainTradeMsg_ProcessTrade
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+                format: uint64
+              status:
+                type: string
+              checker:
+                type: string
+              maker:
+                type: string
+              tradeData:
+                type: string
+              createDate:
+                type: string
+              updateDate:
+                type: string
+              processDate:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              processType:
+                type: string
+              tradeIndex:
+                type: string
+                format: uint64
+      tags:
+        - Msg
   /ggezchain.trade.Msg/UpdateParams:
     post:
       summary: |-
@@ -22996,6 +23056,36 @@ definitions:
         type: string
         format: uint64
       status:
+        type: string
+  ggezchain.trade.MsgProcessTrade:
+    type: object
+    properties:
+      creator:
+        type: string
+      processType:
+        type: string
+      tradeIndex:
+        type: string
+        format: uint64
+  ggezchain.trade.MsgProcessTradeResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+        format: uint64
+      status:
+        type: string
+      checker:
+        type: string
+      maker:
+        type: string
+      tradeData:
+        type: string
+      createDate:
+        type: string
+      updateDate:
+        type: string
+      processDate:
         type: string
   ggezchain.trade.MsgUpdateParams:
     type: object
