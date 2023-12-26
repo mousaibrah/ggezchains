@@ -114,8 +114,8 @@ func (x *fastReflection_StoredTrade) Interface() protoreflect.ProtoMessage {
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
 func (x *fastReflection_StoredTrade) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
-	if x.TradeIndex != "" {
-		value := protoreflect.ValueOfString(x.TradeIndex)
+	if x.TradeIndex != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.TradeIndex)
 		if !f(fd_StoredTrade_tradeIndex, value) {
 			return
 		}
@@ -214,7 +214,7 @@ func (x *fastReflection_StoredTrade) Range(f func(protoreflect.FieldDescriptor, 
 func (x *fastReflection_StoredTrade) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
 	case "ggezchain.trade.StoredTrade.tradeIndex":
-		return x.TradeIndex != ""
+		return x.TradeIndex != uint64(0)
 	case "ggezchain.trade.StoredTrade.tradeType":
 		return x.TradeType != ""
 	case "ggezchain.trade.StoredTrade.coin":
@@ -258,7 +258,7 @@ func (x *fastReflection_StoredTrade) Has(fd protoreflect.FieldDescriptor) bool {
 func (x *fastReflection_StoredTrade) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	case "ggezchain.trade.StoredTrade.tradeIndex":
-		x.TradeIndex = ""
+		x.TradeIndex = uint64(0)
 	case "ggezchain.trade.StoredTrade.tradeType":
 		x.TradeType = ""
 	case "ggezchain.trade.StoredTrade.coin":
@@ -303,7 +303,7 @@ func (x *fastReflection_StoredTrade) Get(descriptor protoreflect.FieldDescriptor
 	switch descriptor.FullName() {
 	case "ggezchain.trade.StoredTrade.tradeIndex":
 		value := x.TradeIndex
-		return protoreflect.ValueOfString(value)
+		return protoreflect.ValueOfUint64(value)
 	case "ggezchain.trade.StoredTrade.tradeType":
 		value := x.TradeType
 		return protoreflect.ValueOfString(value)
@@ -364,7 +364,7 @@ func (x *fastReflection_StoredTrade) Get(descriptor protoreflect.FieldDescriptor
 func (x *fastReflection_StoredTrade) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
 	case "ggezchain.trade.StoredTrade.tradeIndex":
-		x.TradeIndex = value.Interface().(string)
+		x.TradeIndex = value.Uint()
 	case "ggezchain.trade.StoredTrade.tradeType":
 		x.TradeType = value.Interface().(string)
 	case "ggezchain.trade.StoredTrade.coin":
@@ -453,7 +453,7 @@ func (x *fastReflection_StoredTrade) Mutable(fd protoreflect.FieldDescriptor) pr
 func (x *fastReflection_StoredTrade) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	case "ggezchain.trade.StoredTrade.tradeIndex":
-		return protoreflect.ValueOfString("")
+		return protoreflect.ValueOfUint64(uint64(0))
 	case "ggezchain.trade.StoredTrade.tradeType":
 		return protoreflect.ValueOfString("")
 	case "ggezchain.trade.StoredTrade.coin":
@@ -549,9 +549,8 @@ func (x *fastReflection_StoredTrade) ProtoMethods() *protoiface.Methods {
 		var n int
 		var l int
 		_ = l
-		l = len(x.TradeIndex)
-		if l > 0 {
-			n += 1 + l + runtime.Sov(uint64(l))
+		if x.TradeIndex != 0 {
+			n += 1 + runtime.Sov(uint64(x.TradeIndex))
 		}
 		l = len(x.TradeType)
 		if l > 0 {
@@ -725,12 +724,10 @@ func (x *fastReflection_StoredTrade) ProtoMethods() *protoiface.Methods {
 			i--
 			dAtA[i] = 0x12
 		}
-		if len(x.TradeIndex) > 0 {
-			i -= len(x.TradeIndex)
-			copy(dAtA[i:], x.TradeIndex)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.TradeIndex)))
+		if x.TradeIndex != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.TradeIndex))
 			i--
-			dAtA[i] = 0xa
+			dAtA[i] = 0x8
 		}
 		if input.Buf != nil {
 			input.Buf = append(input.Buf, dAtA...)
@@ -782,10 +779,10 @@ func (x *fastReflection_StoredTrade) ProtoMethods() *protoiface.Methods {
 			}
 			switch fieldNum {
 			case 1:
-				if wireType != 2 {
+				if wireType != 0 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TradeIndex", wireType)
 				}
-				var stringLen uint64
+				x.TradeIndex = 0
 				for shift := uint(0); ; shift += 7 {
 					if shift >= 64 {
 						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
@@ -795,24 +792,11 @@ func (x *fastReflection_StoredTrade) ProtoMethods() *protoiface.Methods {
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					stringLen |= uint64(b&0x7F) << shift
+					x.TradeIndex |= uint64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
 				}
-				intStringLen := int(stringLen)
-				if intStringLen < 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
-				}
-				postIndex := iNdEx + intStringLen
-				if postIndex < 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
-				}
-				if postIndex > l {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
-				}
-				x.TradeIndex = string(dAtA[iNdEx:postIndex])
-				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TradeType", wireType)
@@ -1282,7 +1266,7 @@ type StoredTrade struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	TradeIndex      string `protobuf:"bytes,1,opt,name=tradeIndex,proto3" json:"tradeIndex,omitempty"`
+	TradeIndex      uint64 `protobuf:"varint,1,opt,name=tradeIndex,proto3" json:"tradeIndex,omitempty"`
 	TradeType       string `protobuf:"bytes,2,opt,name=tradeType,proto3" json:"tradeType,omitempty"`
 	Coin            string `protobuf:"bytes,3,opt,name=coin,proto3" json:"coin,omitempty"`
 	Price           string `protobuf:"bytes,4,opt,name=price,proto3" json:"price,omitempty"`
@@ -1318,11 +1302,11 @@ func (*StoredTrade) Descriptor() ([]byte, []int) {
 	return file_ggezchain_trade_stored_trade_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *StoredTrade) GetTradeIndex() string {
+func (x *StoredTrade) GetTradeIndex() uint64 {
 	if x != nil {
 		return x.TradeIndex
 	}
-	return ""
+	return 0
 }
 
 func (x *StoredTrade) GetTradeType() string {
@@ -1424,7 +1408,7 @@ var file_ggezchain_trade_stored_trade_proto_rawDesc = []byte{
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e,
 	0x74, 0x72, 0x61, 0x64, 0x65, 0x22, 0x9b, 0x03, 0x0a, 0x0b, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64,
 	0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e,
-	0x64, 0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65,
+	0x64, 0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65,
 	0x49, 0x6e, 0x64, 0x65, 0x78, 0x12, 0x1c, 0x0a, 0x09, 0x74, 0x72, 0x61, 0x64, 0x65, 0x54, 0x79,
 	0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x74, 0x72, 0x61, 0x64, 0x65, 0x54,
 	0x79, 0x70, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x69, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28,

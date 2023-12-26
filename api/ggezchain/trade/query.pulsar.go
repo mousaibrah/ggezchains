@@ -1674,8 +1674,8 @@ func (x *fastReflection_QueryGetStoredTradeRequest) Interface() protoreflect.Pro
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
 func (x *fastReflection_QueryGetStoredTradeRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
-	if x.TradeIndex != "" {
-		value := protoreflect.ValueOfString(x.TradeIndex)
+	if x.TradeIndex != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.TradeIndex)
 		if !f(fd_QueryGetStoredTradeRequest_tradeIndex, value) {
 			return
 		}
@@ -1696,7 +1696,7 @@ func (x *fastReflection_QueryGetStoredTradeRequest) Range(f func(protoreflect.Fi
 func (x *fastReflection_QueryGetStoredTradeRequest) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
 	case "ggezchain.trade.QueryGetStoredTradeRequest.tradeIndex":
-		return x.TradeIndex != ""
+		return x.TradeIndex != uint64(0)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTradeRequest"))
@@ -1714,7 +1714,7 @@ func (x *fastReflection_QueryGetStoredTradeRequest) Has(fd protoreflect.FieldDes
 func (x *fastReflection_QueryGetStoredTradeRequest) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	case "ggezchain.trade.QueryGetStoredTradeRequest.tradeIndex":
-		x.TradeIndex = ""
+		x.TradeIndex = uint64(0)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTradeRequest"))
@@ -1733,7 +1733,7 @@ func (x *fastReflection_QueryGetStoredTradeRequest) Get(descriptor protoreflect.
 	switch descriptor.FullName() {
 	case "ggezchain.trade.QueryGetStoredTradeRequest.tradeIndex":
 		value := x.TradeIndex
-		return protoreflect.ValueOfString(value)
+		return protoreflect.ValueOfUint64(value)
 	default:
 		if descriptor.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTradeRequest"))
@@ -1755,7 +1755,7 @@ func (x *fastReflection_QueryGetStoredTradeRequest) Get(descriptor protoreflect.
 func (x *fastReflection_QueryGetStoredTradeRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
 	case "ggezchain.trade.QueryGetStoredTradeRequest.tradeIndex":
-		x.TradeIndex = value.Interface().(string)
+		x.TradeIndex = value.Uint()
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTradeRequest"))
@@ -1792,7 +1792,7 @@ func (x *fastReflection_QueryGetStoredTradeRequest) Mutable(fd protoreflect.Fiel
 func (x *fastReflection_QueryGetStoredTradeRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	case "ggezchain.trade.QueryGetStoredTradeRequest.tradeIndex":
-		return protoreflect.ValueOfString("")
+		return protoreflect.ValueOfUint64(uint64(0))
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTradeRequest"))
@@ -1862,9 +1862,8 @@ func (x *fastReflection_QueryGetStoredTradeRequest) ProtoMethods() *protoiface.M
 		var n int
 		var l int
 		_ = l
-		l = len(x.TradeIndex)
-		if l > 0 {
-			n += 1 + l + runtime.Sov(uint64(l))
+		if x.TradeIndex != 0 {
+			n += 1 + runtime.Sov(uint64(x.TradeIndex))
 		}
 		if x.unknownFields != nil {
 			n += len(x.unknownFields)
@@ -1895,12 +1894,10 @@ func (x *fastReflection_QueryGetStoredTradeRequest) ProtoMethods() *protoiface.M
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
 		}
-		if len(x.TradeIndex) > 0 {
-			i -= len(x.TradeIndex)
-			copy(dAtA[i:], x.TradeIndex)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.TradeIndex)))
+		if x.TradeIndex != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.TradeIndex))
 			i--
-			dAtA[i] = 0xa
+			dAtA[i] = 0x8
 		}
 		if input.Buf != nil {
 			input.Buf = append(input.Buf, dAtA...)
@@ -1952,10 +1949,10 @@ func (x *fastReflection_QueryGetStoredTradeRequest) ProtoMethods() *protoiface.M
 			}
 			switch fieldNum {
 			case 1:
-				if wireType != 2 {
+				if wireType != 0 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TradeIndex", wireType)
 				}
-				var stringLen uint64
+				x.TradeIndex = 0
 				for shift := uint(0); ; shift += 7 {
 					if shift >= 64 {
 						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
@@ -1965,24 +1962,11 @@ func (x *fastReflection_QueryGetStoredTradeRequest) ProtoMethods() *protoiface.M
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					stringLen |= uint64(b&0x7F) << shift
+					x.TradeIndex |= uint64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
 				}
-				intStringLen := int(stringLen)
-				if intStringLen < 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
-				}
-				postIndex := iNdEx + intStringLen
-				if postIndex < 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
-				}
-				if postIndex > l {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
-				}
-				x.TradeIndex = string(dAtA[iNdEx:postIndex])
-				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
 				skippy, err := runtime.Skip(dAtA[iNdEx:])
@@ -3604,7 +3588,7 @@ type QueryGetStoredTradeRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	TradeIndex string `protobuf:"bytes,1,opt,name=tradeIndex,proto3" json:"tradeIndex,omitempty"`
+	TradeIndex uint64 `protobuf:"varint,1,opt,name=tradeIndex,proto3" json:"tradeIndex,omitempty"`
 }
 
 func (x *QueryGetStoredTradeRequest) Reset() {
@@ -3627,11 +3611,11 @@ func (*QueryGetStoredTradeRequest) Descriptor() ([]byte, []int) {
 	return file_ggezchain_trade_query_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *QueryGetStoredTradeRequest) GetTradeIndex() string {
+func (x *QueryGetStoredTradeRequest) GetTradeIndex() uint64 {
 	if x != nil {
 		return x.TradeIndex
 	}
-	return ""
+	return 0
 }
 
 type QueryGetStoredTradeResponse struct {
@@ -3783,7 +3767,7 @@ var file_ggezchain_trade_query_proto_rawDesc = []byte{
 	0x00, 0x52, 0x0a, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x22, 0x3c, 0x0a,
 	0x1a, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54,
 	0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x74,
-	0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52,
 	0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x22, 0x63, 0x0a, 0x1b, 0x51,
 	0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61,
 	0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0b, 0x73, 0x74,

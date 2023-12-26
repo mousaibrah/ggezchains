@@ -14,15 +14,15 @@ func TestGenesis(t *testing.T) {
 	genesisState := types.GenesisState{
 		Params: types.DefaultParams(),
 
-		TradeIndex: &types.TradeIndex{
+		TradeIndex: types.TradeIndex{
 			NextId: 65,
 		},
 		StoredTradeList: []types.StoredTrade{
 			{
-				TradeIndex: "0",
+				TradeIndex: 0,
 			},
 			{
-				TradeIndex: "1",
+				TradeIndex: 1,
 			},
 		},
 		// this line is used by starport scaffolding # genesis/test/state

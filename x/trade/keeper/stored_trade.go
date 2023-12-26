@@ -22,7 +22,7 @@ func (k Keeper) SetStoredTrade(ctx context.Context, storedTrade types.StoredTrad
 // GetStoredTrade returns a storedTrade from its index
 func (k Keeper) GetStoredTrade(
 	ctx context.Context,
-	tradeIndex string,
+	tradeIndex uint64,
 
 ) (val types.StoredTrade, found bool) {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
@@ -42,7 +42,7 @@ func (k Keeper) GetStoredTrade(
 // RemoveStoredTrade removes a storedTrade from the store
 func (k Keeper) RemoveStoredTrade(
 	ctx context.Context,
-	tradeIndex string,
+	tradeIndex uint64,
 
 ) {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))

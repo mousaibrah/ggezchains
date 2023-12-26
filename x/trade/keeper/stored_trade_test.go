@@ -18,7 +18,7 @@ var _ = strconv.IntSize
 func createNStoredTrade(keeper keeper.Keeper, ctx context.Context, n int) []types.StoredTrade {
 	items := make([]types.StoredTrade, n)
 	for i := range items {
-		items[i].TradeIndex = strconv.Itoa(i)
+		items[i].TradeIndex = uint64(i)
 
 		keeper.SetStoredTrade(ctx, items[i])
 	}

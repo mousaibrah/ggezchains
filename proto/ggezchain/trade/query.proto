@@ -54,7 +54,7 @@ message QueryGetTradeIndexResponse {
 }
 
 message QueryGetStoredTradeRequest {
-  string tradeIndex = 1;
+  uint64 tradeIndex = 1;
 }
 
 message QueryGetStoredTradeResponse {

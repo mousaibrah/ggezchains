@@ -44,6 +44,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					RpcMethod: "UpdateParams",
 					Skip:      true, // skipped because authority gated
 				},
+				{
+					RpcMethod:      "CreateTrade",
+					Use:            "create-trade [trade-type] [coin] [price] [quantity] [receiver-address] [trade-data]",
+					Short:          "Send a createTrade tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "tradeType"}, {ProtoField: "coin"}, {ProtoField: "price"}, {ProtoField: "quantity"}, {ProtoField: "receiverAddress"}, {ProtoField: "tradeData"}},
+				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
 		},
