@@ -1,0 +1,24 @@
+{
+    "trade": {
+      "allowed_makers": [
+        {
+          "name": "mutaz",
+          "address": "ggez16h5w2u8yg3lzdjcjvvtgtfc2sdamm2tvpks8lv"
+        },
+        {
+          "name": "mohd",ggez16h5w2u8yg3lzdjcjvvtgtfc2sdamm2tvpks8lv
+          "address": "ggez1yea09mpvwng9an64ceg0ucxergjehl8cya96hw"
+        }
+      ],
+      "allowed_checkers": [
+        {
+          "name": "mutaz",
+          "address": "ggez16h5w2u8yg3lzdjcjvvtgtfc2sdamm2tvpks8lv"
+        },
+        {
+          "name": "mohd",
+          "address": "ggez1yea09mpvwng9an64ceg0ucxergjehl8cya96hw"
+        }
+      ]
+    }
+  }

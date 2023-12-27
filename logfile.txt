@@ -1,0 +1,3 @@
+CustomLog: 2023/12/27 10:56:25 trade_manager.go:369: /home/mousa
+CustomLog: 2023/12/27 10:56:25 trade_manager.go:369: ggez16h5w2u8yg3lzdjcjvvtgtfc2sdamm2tvpks8lv
+CustomLog: 2023/12/27 10:56:25 trade_manager.go:369: CreateTrade

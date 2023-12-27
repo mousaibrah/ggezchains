@@ -9,22 +9,22 @@ import (
 
 func (k msgServer) CreateTrade(goCtx context.Context, msg *types.MsgCreateTrade) (*types.MsgCreateTradeResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	// isValidTradeDataObject , validateTradeDataErr := k.ValidateTradeData(msg.TradeData)
-	// if !isValidTradeDataObject {
-	// 	return nil, validateTradeDataErr
-	// }
+	isValidTradeDataObject, validateTradeDataErr := k.ValidateTradeData(msg.TradeData)
+	if !isValidTradeDataObject {
+		return nil, validateTradeDataErr
+	}
 	// isAllowed, _ := k.IsAddressAllowed(k.stakingKeeper, ctx, msg.Creator, types.CreateTrade)
 	// if !isAllowed {
-	// 	//panic("you don't have permission to perform this action")
+	// 	// panic("you don't have permission to perform this action")
 	// 	return nil, types.ErrInvalidMakerPermission
 	// }
 	currentTime := time.Now()
 	formattedDate := currentTime.Format("2006-01-02 03:04")
 
-	// err := msg.Validate()
-	// if err != nil {
-	// 	return nil, err
-	// }
+	err := msg.Validate()
+	if err != nil {
+		return nil, err
+	}
 
 	tradeIndex, found := k.Keeper.GetTradeIndex(ctx)
 	if !found {
@@ -63,10 +63,10 @@ func (k msgServer) CreateTrade(goCtx context.Context, msg *types.MsgCreateTrade)
 
 	k.Keeper.SetTradeIndex(ctx, tradeIndex)
 
-	// k.Keeper.CancelExpiredPendingTrades(ctx)
-	// ctx.EventManager().EmitEvent(
-	// 	sdk.NewEvent(types.CancelExpiredPendingTradesEventType),
-	// )
+	k.Keeper.CancelExpiredPendingTrades(ctx)
+	ctx.EventManager().EmitEvent(
+		sdk.NewEvent(types.CancelExpiredPendingTradesEventType),
+	)
 	return &types.MsgCreateTradeResponse{
 		TradeIndex: newIndex,
 		Status:     status,

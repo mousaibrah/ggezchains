@@ -2,6 +2,7 @@ package types
 
 import (
 	"context"
+	stakingTypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
@@ -15,14 +16,21 @@ type AccountKeeper interface {
 // BankKeeper defines the expected interface for the Bank module.
 type BankKeeper interface {
 	SpendableCoins(context.Context, sdk.AccAddress) sdk.Coins
-	// MintCoins(ctx sdk.Context, moduleName string, amt sdk.Coins) error
-	// BurnCoins(ctx sdk.Context, moduleName string, amt sdk.Coins) error
-	// SendCoinsFromModuleToAccount(ctx sdk.Context, senderModule string, recipientAddr sdk.AccAddress, amt sdk.Coins) error
-	// SendCoinsFromAccountToModule(ctx sdk.Context, senderAddr sdk.AccAddress, recipientModule string, amt sdk.Coins) error
+	MintCoins(ctx context.Context, moduleName string, amt sdk.Coins) error
+	BurnCoins(ctx context.Context, moduleName string, amt sdk.Coins) error
+	SendCoinsFromModuleToAccount(ctx context.Context, senderModule string, recipientAddr sdk.AccAddress, amt sdk.Coins) error
+	SendCoinsFromAccountToModule(ctx context.Context, senderAddr sdk.AccAddress, recipientModule string, amt sdk.Coins) error
 }
 
 // ParamSubspace defines the expected Subspace interface for parameters.
 type ParamSubspace interface {
 	Get(context.Context, []byte, interface{})
 	Set(context.Context, []byte, interface{})
+}
+
+type StakingKeeper interface {
+	GetAllValidators(ctx context.Context) (validators []stakingTypes.Validator, err error)
+	GetAllDelegations(ctx context.Context) (delegations []stakingTypes.Delegation, err error)
+	GetDelegation(ctx context.Context, delAddr sdk.AccAddress, valAddr sdk.ValAddress) (stakingTypes.Delegation, error)
+	ValidatorByConsAddr(ctx context.Context, addr sdk.ConsAddress) (stakingTypes.ValidatorI, error)
 }
