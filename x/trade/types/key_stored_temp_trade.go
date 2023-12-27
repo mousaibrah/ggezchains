@@ -11,11 +11,12 @@ const (
 
 // StoredTempTradeKey returns the store key to retrieve a StoredTempTrade from the index fields
 func StoredTempTradeKey(
-	tradeIndex string,
+	tradeIndex uint64,
 ) []byte {
 	var key []byte
 
-	tradeIndexBytes := []byte(tradeIndex)
+	tradeIndexBytes := make([]byte, 8)
+	binary.BigEndian.PutUint64(tradeIndexBytes, tradeIndex)
 	key = append(key, tradeIndexBytes...)
 	key = append(key, []byte("/")...)
 

@@ -27,10 +27,10 @@ func TestGenesis(t *testing.T) {
 		},
 		StoredTempTradeList: []types.StoredTempTrade{
 			{
-				TradeIndex: "0",
+				TradeIndex: 0,
 			},
 			{
-				TradeIndex: "1",
+				TradeIndex: 1,
 			},
 		},
 		// this line is used by starport scaffolding # genesis/test/state

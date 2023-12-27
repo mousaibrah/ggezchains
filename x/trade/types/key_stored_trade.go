@@ -16,6 +16,7 @@ func StoredTradeKey(
 	var key []byte
 
 	tradeIndexBytes := make([]byte, 8)
+	binary.BigEndian.PutUint64(tradeIndexBytes, tradeIndex)
 	key = append(key, tradeIndexBytes...)
 	key = append(key, []byte("/")...)
 

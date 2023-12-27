@@ -175,7 +175,7 @@ func request_Query_StoredTempTrade_0(ctx context.Context, marshaler runtime.Mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "tradeIndex")
 	}
 
-	protoReq.TradeIndex, err = runtime.String(val)
+	protoReq.TradeIndex, err = runtime.Uint64(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "tradeIndex", err)
@@ -202,7 +202,7 @@ func local_request_Query_StoredTempTrade_0(ctx context.Context, marshaler runtim
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "tradeIndex")
 	}
 
-	protoReq.TradeIndex, err = runtime.String(val)
+	protoReq.TradeIndex, err = runtime.Uint64(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "tradeIndex", err)

@@ -82,7 +82,7 @@ message QueryAllStoredTradeResponse {
 }
 
 message QueryGetStoredTempTradeRequest {
-  string tradeIndex = 1;
+  uint64 tradeIndex = 1;
 }
 
 message QueryGetStoredTempTradeResponse {

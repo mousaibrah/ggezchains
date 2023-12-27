@@ -35,10 +35,10 @@ func TestGenesisState_Validate(t *testing.T) {
 				},
 				StoredTempTradeList: []types.StoredTempTrade{
 					{
-						TradeIndex: "0",
+						TradeIndex: 0,
 					},
 					{
-						TradeIndex: "1",
+						TradeIndex: 1,
 					},
 				},
 				// this line is used by starport scaffolding # types/genesis/validField
@@ -64,10 +64,10 @@ func TestGenesisState_Validate(t *testing.T) {
 			genState: &types.GenesisState{
 				StoredTempTradeList: []types.StoredTempTrade{
 					{
-						TradeIndex: "0",
+						TradeIndex: 0,
 					},
 					{
-						TradeIndex: "0",
+						TradeIndex: 0,
 					},
 				},
 			},

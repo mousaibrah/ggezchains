@@ -9004,174 +9004,6 @@ paths:
               Since: cosmos-sdk 0.47
       tags:
         - Msg
-  /ggezchain.trade.Msg/CreateTrade:
-    post:
-      operationId: GgezchainTradeMsg_CreateTrade
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              tradeIndex:
-                type: string
-                format: uint64
-              status:
-                type: string
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: body
-          in: body
-          required: true
-          schema:
-            type: object
-            properties:
-              creator:
-                type: string
-              tradeType:
-                type: string
-              coin:
-                type: string
-              price:
-                type: string
-              quantity:
-                type: string
-              receiverAddress:
-                type: string
-              tradeData:
-                type: string
-      tags:
-        - Msg
-  /ggezchain.trade.Msg/ProcessTrade:
-    post:
-      operationId: GgezchainTradeMsg_ProcessTrade
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              tradeIndex:
-                type: string
-                format: uint64
-              status:
-                type: string
-              checker:
-                type: string
-              maker:
-                type: string
-              tradeData:
-                type: string
-              createDate:
-                type: string
-              updateDate:
-                type: string
-              processDate:
-                type: string
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: body
-          in: body
-          required: true
-          schema:
-            type: object
-            properties:
-              creator:
-                type: string
-              processType:
-                type: string
-              tradeIndex:
-                type: string
-                format: uint64
-      tags:
-        - Msg
-  /ggezchain.trade.Msg/UpdateParams:
-    post:
-      summary: |-
-        UpdateParams defines a (governance) operation for updating the module
-        parameters. The authority defaults to the x/gov module account.
-      operationId: GgezchainTradeMsg_UpdateParams
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            description: >-
-              MsgUpdateParamsResponse defines the response structure for
-              executing a
-
-              MsgUpdateParams message.
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: body
-          description: MsgUpdateParams is the Msg/UpdateParams request type.
-          in: body
-          required: true
-          schema:
-            type: object
-            properties:
-              authority:
-                type: string
-                description: >-
-                  authority is the address that controls the module (defaults to
-                  x/gov unless overwritten).
-              params:
-                description: 'NOTE: All parameters must be supplied.'
-                type: object
-            description: MsgUpdateParams is the Msg/UpdateParams request type.
-      tags:
-        - Msg
   /mousaibrah/ggezchain/trade/params:
     get:
       summary: Parameters queries the parameters of the module.
@@ -9224,8 +9056,10 @@ paths:
                   properties:
                     tradeIndex:
                       type: string
+                      format: uint64
                     tempTradeIndex:
                       type: string
+                      format: uint64
                     createDate:
                       type: string
               pagination:
@@ -9348,8 +9182,10 @@ paths:
                 properties:
                   tradeIndex:
                     type: string
+                    format: uint64
                   tempTradeIndex:
                     type: string
+                    format: uint64
                   createDate:
                     type: string
         default:
@@ -9375,6 +9211,7 @@ paths:
           in: path
           required: true
           type: string
+          format: uint64
       tags:
         - Query
   /mousaibrah/ggezchain/trade/stored_trade:
@@ -9629,6 +9466,174 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
+  /ggezchain.trade.Msg/CreateTrade:
+    post:
+      operationId: GgezchainTradeMsg_CreateTrade
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+                format: uint64
+              status:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              tradeType:
+                type: string
+              coin:
+                type: string
+              price:
+                type: string
+              quantity:
+                type: string
+              receiverAddress:
+                type: string
+              tradeData:
+                type: string
+      tags:
+        - Msg
+  /ggezchain.trade.Msg/ProcessTrade:
+    post:
+      operationId: GgezchainTradeMsg_ProcessTrade
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+                format: uint64
+              status:
+                type: string
+              checker:
+                type: string
+              maker:
+                type: string
+              tradeData:
+                type: string
+              createDate:
+                type: string
+              updateDate:
+                type: string
+              processDate:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              processType:
+                type: string
+              tradeIndex:
+                type: string
+                format: uint64
+      tags:
+        - Msg
+  /ggezchain.trade.Msg/UpdateParams:
+    post:
+      summary: |-
+        UpdateParams defines a (governance) operation for updating the module
+        parameters. The authority defaults to the x/gov module account.
+      operationId: GgezchainTradeMsg_UpdateParams
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            description: >-
+              MsgUpdateParamsResponse defines the response structure for
+              executing a
+
+              MsgUpdateParams message.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          description: MsgUpdateParams is the Msg/UpdateParams request type.
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              authority:
+                type: string
+                description: >-
+                  authority is the address that controls the module (defaults to
+                  x/gov unless overwritten).
+              params:
+                description: 'NOTE: All parameters must be supplied.'
+                type: object
+            description: MsgUpdateParams is the Msg/UpdateParams request type.
+      tags:
+        - Msg
   /ibc.applications.fee.v1.Msg/PayPacketFee:
     post:
       summary: >-
@@ -23201,81 +23206,6 @@ definitions:
           min_commission_rate is the chain-wide minimum commission rate that a
           validator can charge their delegators
     description: Params defines the parameters for the x/staking module.
-  ggezchain.trade.MsgCreateTrade:
-    type: object
-    properties:
-      creator:
-        type: string
-      tradeType:
-        type: string
-      coin:
-        type: string
-      price:
-        type: string
-      quantity:
-        type: string
-      receiverAddress:
-        type: string
-      tradeData:
-        type: string
-  ggezchain.trade.MsgCreateTradeResponse:
-    type: object
-    properties:
-      tradeIndex:
-        type: string
-        format: uint64
-      status:
-        type: string
-  ggezchain.trade.MsgProcessTrade:
-    type: object
-    properties:
-      creator:
-        type: string
-      processType:
-        type: string
-      tradeIndex:
-        type: string
-        format: uint64
-  ggezchain.trade.MsgProcessTradeResponse:
-    type: object
-    properties:
-      tradeIndex:
-        type: string
-        format: uint64
-      status:
-        type: string
-      checker:
-        type: string
-      maker:
-        type: string
-      tradeData:
-        type: string
-      createDate:
-        type: string
-      updateDate:
-        type: string
-      processDate:
-        type: string
-  ggezchain.trade.MsgUpdateParams:
-    type: object
-    properties:
-      authority:
-        type: string
-        description: >-
-          authority is the address that controls the module (defaults to x/gov
-          unless overwritten).
-      params:
-        description: 'NOTE: All parameters must be supplied.'
-        type: object
-    description: MsgUpdateParams is the Msg/UpdateParams request type.
-  ggezchain.trade.MsgUpdateParamsResponse:
-    type: object
-    description: |-
-      MsgUpdateParamsResponse defines the response structure for executing a
-      MsgUpdateParams message.
-  ggezchain.trade.Params:
-    type: object
-    description: Params defines the parameters for the module.
   cosmos.base.query.v1beta1.PageRequest:
     type: object
     properties:
@@ -23353,6 +23283,9 @@ definitions:
                repeated Bar results = 1;
                PageResponse page = 2;
        }
+  ggezchain.trade.Params:
+    type: object
+    description: Params defines the parameters for the module.
   ggezchain.trade.QueryAllStoredTempTradeResponse:
     type: object
     properties:
@@ -23363,8 +23296,10 @@ definitions:
           properties:
             tradeIndex:
               type: string
+              format: uint64
             tempTradeIndex:
               type: string
+              format: uint64
             createDate:
               type: string
       pagination:
@@ -23464,8 +23399,10 @@ definitions:
         properties:
           tradeIndex:
             type: string
+            format: uint64
           tempTradeIndex:
             type: string
+            format: uint64
           createDate:
             type: string
   ggezchain.trade.QueryGetStoredTradeResponse:
@@ -23524,8 +23461,10 @@ definitions:
     properties:
       tradeIndex:
         type: string
+        format: uint64
       tempTradeIndex:
         type: string
+        format: uint64
       createDate:
         type: string
   ggezchain.trade.StoredTrade:
@@ -23566,6 +23505,78 @@ definitions:
       nextId:
         type: string
         format: uint64
+  ggezchain.trade.MsgCreateTrade:
+    type: object
+    properties:
+      creator:
+        type: string
+      tradeType:
+        type: string
+      coin:
+        type: string
+      price:
+        type: string
+      quantity:
+        type: string
+      receiverAddress:
+        type: string
+      tradeData:
+        type: string
+  ggezchain.trade.MsgCreateTradeResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+        format: uint64
+      status:
+        type: string
+  ggezchain.trade.MsgProcessTrade:
+    type: object
+    properties:
+      creator:
+        type: string
+      processType:
+        type: string
+      tradeIndex:
+        type: string
+        format: uint64
+  ggezchain.trade.MsgProcessTradeResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+        format: uint64
+      status:
+        type: string
+      checker:
+        type: string
+      maker:
+        type: string
+      tradeData:
+        type: string
+      createDate:
+        type: string
+      updateDate:
+        type: string
+      processDate:
+        type: string
+  ggezchain.trade.MsgUpdateParams:
+    type: object
+    properties:
+      authority:
+        type: string
+        description: >-
+          authority is the address that controls the module (defaults to x/gov
+          unless overwritten).
+      params:
+        description: 'NOTE: All parameters must be supplied.'
+        type: object
+    description: MsgUpdateParams is the Msg/UpdateParams request type.
+  ggezchain.trade.MsgUpdateParamsResponse:
+    type: object
+    description: |-
+      MsgUpdateParamsResponse defines the response structure for executing a
+      MsgUpdateParams message.
   ibc.applications.fee.v1.Fee:
     type: object
     properties:
