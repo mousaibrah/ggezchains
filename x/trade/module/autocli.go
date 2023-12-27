@@ -33,6 +33,17 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Shows a storedTrade",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "tradeIndex"}},
 				},
+				{
+					RpcMethod: "StoredTempTradeAll",
+					Use:       "list-stored-temp-trade",
+					Short:     "List all storedTempTrade",
+				},
+				{
+					RpcMethod:      "StoredTempTrade",
+					Use:            "show-stored-temp-trade [id]",
+					Short:          "Shows a storedTempTrade",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "tradeIndex"}},
+				},
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},

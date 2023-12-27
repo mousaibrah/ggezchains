@@ -25,6 +25,14 @@ func TestGenesis(t *testing.T) {
 				TradeIndex: 1,
 			},
 		},
+		StoredTempTradeList: []types.StoredTempTrade{
+			{
+				TradeIndex: "0",
+			},
+			{
+				TradeIndex: "1",
+			},
+		},
 		// this line is used by starport scaffolding # genesis/test/state
 	}
 
@@ -38,5 +46,6 @@ func TestGenesis(t *testing.T) {
 
 	require.Equal(t, genesisState.TradeIndex, got.TradeIndex)
 	require.ElementsMatch(t, genesisState.StoredTradeList, got.StoredTradeList)
+	require.ElementsMatch(t, genesisState.StoredTempTradeList, got.StoredTempTradeList)
 	// this line is used by starport scaffolding # genesis/test/assert
 }

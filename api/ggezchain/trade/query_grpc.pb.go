@@ -19,10 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Query_Params_FullMethodName         = "/ggezchain.trade.Query/Params"
-	Query_TradeIndex_FullMethodName     = "/ggezchain.trade.Query/TradeIndex"
-	Query_StoredTrade_FullMethodName    = "/ggezchain.trade.Query/StoredTrade"
-	Query_StoredTradeAll_FullMethodName = "/ggezchain.trade.Query/StoredTradeAll"
+	Query_Params_FullMethodName             = "/ggezchain.trade.Query/Params"
+	Query_TradeIndex_FullMethodName         = "/ggezchain.trade.Query/TradeIndex"
+	Query_StoredTrade_FullMethodName        = "/ggezchain.trade.Query/StoredTrade"
+	Query_StoredTradeAll_FullMethodName     = "/ggezchain.trade.Query/StoredTradeAll"
+	Query_StoredTempTrade_FullMethodName    = "/ggezchain.trade.Query/StoredTempTrade"
+	Query_StoredTempTradeAll_FullMethodName = "/ggezchain.trade.Query/StoredTempTradeAll"
 )
 
 // QueryClient is the client API for Query service.
@@ -36,6 +38,9 @@ type QueryClient interface {
 	// Queries a list of StoredTrade items.
 	StoredTrade(ctx context.Context, in *QueryGetStoredTradeRequest, opts ...grpc.CallOption) (*QueryGetStoredTradeResponse, error)
 	StoredTradeAll(ctx context.Context, in *QueryAllStoredTradeRequest, opts ...grpc.CallOption) (*QueryAllStoredTradeResponse, error)
+	// Queries a list of StoredTempTrade items.
+	StoredTempTrade(ctx context.Context, in *QueryGetStoredTempTradeRequest, opts ...grpc.CallOption) (*QueryGetStoredTempTradeResponse, error)
+	StoredTempTradeAll(ctx context.Context, in *QueryAllStoredTempTradeRequest, opts ...grpc.CallOption) (*QueryAllStoredTempTradeResponse, error)
 }
 
 type queryClient struct {
@@ -82,6 +87,24 @@ func (c *queryClient) StoredTradeAll(ctx context.Context, in *QueryAllStoredTrad
 	return out, nil
 }
 
+func (c *queryClient) StoredTempTrade(ctx context.Context, in *QueryGetStoredTempTradeRequest, opts ...grpc.CallOption) (*QueryGetStoredTempTradeResponse, error) {
+	out := new(QueryGetStoredTempTradeResponse)
+	err := c.cc.Invoke(ctx, Query_StoredTempTrade_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) StoredTempTradeAll(ctx context.Context, in *QueryAllStoredTempTradeRequest, opts ...grpc.CallOption) (*QueryAllStoredTempTradeResponse, error) {
+	out := new(QueryAllStoredTempTradeResponse)
+	err := c.cc.Invoke(ctx, Query_StoredTempTradeAll_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 // All implementations must embed UnimplementedQueryServer
 // for forward compatibility
@@ -93,6 +116,9 @@ type QueryServer interface {
 	// Queries a list of StoredTrade items.
 	StoredTrade(context.Context, *QueryGetStoredTradeRequest) (*QueryGetStoredTradeResponse, error)
 	StoredTradeAll(context.Context, *QueryAllStoredTradeRequest) (*QueryAllStoredTradeResponse, error)
+	// Queries a list of StoredTempTrade items.
+	StoredTempTrade(context.Context, *QueryGetStoredTempTradeRequest) (*QueryGetStoredTempTradeResponse, error)
+	StoredTempTradeAll(context.Context, *QueryAllStoredTempTradeRequest) (*QueryAllStoredTempTradeResponse, error)
 	mustEmbedUnimplementedQueryServer()
 }
 
@@ -111,6 +137,12 @@ func (UnimplementedQueryServer) StoredTrade(context.Context, *QueryGetStoredTrad
 }
 func (UnimplementedQueryServer) StoredTradeAll(context.Context, *QueryAllStoredTradeRequest) (*QueryAllStoredTradeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StoredTradeAll not implemented")
+}
+func (UnimplementedQueryServer) StoredTempTrade(context.Context, *QueryGetStoredTempTradeRequest) (*QueryGetStoredTempTradeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StoredTempTrade not implemented")
+}
+func (UnimplementedQueryServer) StoredTempTradeAll(context.Context, *QueryAllStoredTempTradeRequest) (*QueryAllStoredTempTradeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StoredTempTradeAll not implemented")
 }
 func (UnimplementedQueryServer) mustEmbedUnimplementedQueryServer() {}
 
@@ -197,6 +229,42 @@ func _Query_StoredTradeAll_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_StoredTempTrade_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetStoredTempTradeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).StoredTempTrade(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_StoredTempTrade_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).StoredTempTrade(ctx, req.(*QueryGetStoredTempTradeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_StoredTempTradeAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllStoredTempTradeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).StoredTempTradeAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_StoredTempTradeAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).StoredTempTradeAll(ctx, req.(*QueryAllStoredTempTradeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Query_ServiceDesc is the grpc.ServiceDesc for Query service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -219,6 +287,14 @@ var Query_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StoredTradeAll",
 			Handler:    _Query_StoredTradeAll_Handler,
+		},
+		{
+			MethodName: "StoredTempTrade",
+			Handler:    _Query_StoredTempTrade_Handler,
+		},
+		{
+			MethodName: "StoredTempTradeAll",
+			Handler:    _Query_StoredTempTradeAll_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

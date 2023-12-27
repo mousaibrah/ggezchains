@@ -3445,6 +3445,1869 @@ func (x *fastReflection_QueryAllStoredTradeResponse) ProtoMethods() *protoiface.
 	}
 }
 
+var (
+	md_QueryGetStoredTempTradeRequest            protoreflect.MessageDescriptor
+	fd_QueryGetStoredTempTradeRequest_tradeIndex protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_ggezchain_trade_query_proto_init()
+	md_QueryGetStoredTempTradeRequest = File_ggezchain_trade_query_proto.Messages().ByName("QueryGetStoredTempTradeRequest")
+	fd_QueryGetStoredTempTradeRequest_tradeIndex = md_QueryGetStoredTempTradeRequest.Fields().ByName("tradeIndex")
+}
+
+var _ protoreflect.Message = (*fastReflection_QueryGetStoredTempTradeRequest)(nil)
+
+type fastReflection_QueryGetStoredTempTradeRequest QueryGetStoredTempTradeRequest
+
+func (x *QueryGetStoredTempTradeRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryGetStoredTempTradeRequest)(x)
+}
+
+func (x *QueryGetStoredTempTradeRequest) slowProtoReflect() protoreflect.Message {
+	mi := &file_ggezchain_trade_query_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_QueryGetStoredTempTradeRequest_messageType fastReflection_QueryGetStoredTempTradeRequest_messageType
+var _ protoreflect.MessageType = fastReflection_QueryGetStoredTempTradeRequest_messageType{}
+
+type fastReflection_QueryGetStoredTempTradeRequest_messageType struct{}
+
+func (x fastReflection_QueryGetStoredTempTradeRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryGetStoredTempTradeRequest)(nil)
+}
+func (x fastReflection_QueryGetStoredTempTradeRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryGetStoredTempTradeRequest)
+}
+func (x fastReflection_QueryGetStoredTempTradeRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetStoredTempTradeRequest
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetStoredTempTradeRequest
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Type() protoreflect.MessageType {
+	return _fastReflection_QueryGetStoredTempTradeRequest_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) New() protoreflect.Message {
+	return new(fastReflection_QueryGetStoredTempTradeRequest)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Interface() protoreflect.ProtoMessage {
+	return (*QueryGetStoredTempTradeRequest)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.TradeIndex != "" {
+		value := protoreflect.ValueOfString(x.TradeIndex)
+		if !f(fd_QueryGetStoredTempTradeRequest_tradeIndex, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeRequest.tradeIndex":
+		return x.TradeIndex != ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeRequest.tradeIndex":
+		x.TradeIndex = ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeRequest.tradeIndex":
+		value := x.TradeIndex
+		return protoreflect.ValueOfString(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeRequest does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeRequest.tradeIndex":
+		x.TradeIndex = value.Interface().(string)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeRequest.tradeIndex":
+		panic(fmt.Errorf("field tradeIndex of message ggezchain.trade.QueryGetStoredTempTradeRequest is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeRequest.tradeIndex":
+		return protoreflect.ValueOfString("")
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in ggezchain.trade.QueryGetStoredTempTradeRequest", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_QueryGetStoredTempTradeRequest) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*QueryGetStoredTempTradeRequest)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.TradeIndex)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetStoredTempTradeRequest)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.TradeIndex) > 0 {
+			i -= len(x.TradeIndex)
+			copy(dAtA[i:], x.TradeIndex)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.TradeIndex)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetStoredTempTradeRequest)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetStoredTempTradeRequest: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetStoredTempTradeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TradeIndex", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.TradeIndex = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_QueryGetStoredTempTradeResponse                 protoreflect.MessageDescriptor
+	fd_QueryGetStoredTempTradeResponse_storedTempTrade protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_ggezchain_trade_query_proto_init()
+	md_QueryGetStoredTempTradeResponse = File_ggezchain_trade_query_proto.Messages().ByName("QueryGetStoredTempTradeResponse")
+	fd_QueryGetStoredTempTradeResponse_storedTempTrade = md_QueryGetStoredTempTradeResponse.Fields().ByName("storedTempTrade")
+}
+
+var _ protoreflect.Message = (*fastReflection_QueryGetStoredTempTradeResponse)(nil)
+
+type fastReflection_QueryGetStoredTempTradeResponse QueryGetStoredTempTradeResponse
+
+func (x *QueryGetStoredTempTradeResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryGetStoredTempTradeResponse)(x)
+}
+
+func (x *QueryGetStoredTempTradeResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_ggezchain_trade_query_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_QueryGetStoredTempTradeResponse_messageType fastReflection_QueryGetStoredTempTradeResponse_messageType
+var _ protoreflect.MessageType = fastReflection_QueryGetStoredTempTradeResponse_messageType{}
+
+type fastReflection_QueryGetStoredTempTradeResponse_messageType struct{}
+
+func (x fastReflection_QueryGetStoredTempTradeResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryGetStoredTempTradeResponse)(nil)
+}
+func (x fastReflection_QueryGetStoredTempTradeResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryGetStoredTempTradeResponse)
+}
+func (x fastReflection_QueryGetStoredTempTradeResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetStoredTempTradeResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetStoredTempTradeResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Type() protoreflect.MessageType {
+	return _fastReflection_QueryGetStoredTempTradeResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) New() protoreflect.Message {
+	return new(fastReflection_QueryGetStoredTempTradeResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Interface() protoreflect.ProtoMessage {
+	return (*QueryGetStoredTempTradeResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.StoredTempTrade != nil {
+		value := protoreflect.ValueOfMessage(x.StoredTempTrade.ProtoReflect())
+		if !f(fd_QueryGetStoredTempTradeResponse_storedTempTrade, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeResponse.storedTempTrade":
+		return x.StoredTempTrade != nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeResponse.storedTempTrade":
+		x.StoredTempTrade = nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeResponse.storedTempTrade":
+		value := x.StoredTempTrade
+		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeResponse.storedTempTrade":
+		x.StoredTempTrade = value.Message().Interface().(*StoredTempTrade)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeResponse.storedTempTrade":
+		if x.StoredTempTrade == nil {
+			x.StoredTempTrade = new(StoredTempTrade)
+		}
+		return protoreflect.ValueOfMessage(x.StoredTempTrade.ProtoReflect())
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryGetStoredTempTradeResponse.storedTempTrade":
+		m := new(StoredTempTrade)
+		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryGetStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryGetStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in ggezchain.trade.QueryGetStoredTempTradeResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_QueryGetStoredTempTradeResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*QueryGetStoredTempTradeResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if x.StoredTempTrade != nil {
+			l = options.Size(x.StoredTempTrade)
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetStoredTempTradeResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.StoredTempTrade != nil {
+			encoded, err := options.Marshal(x.StoredTempTrade)
+			if err != nil {
+				return protoiface.MarshalOutput{
+					NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+					Buf:               input.Buf,
+				}, err
+			}
+			i -= len(encoded)
+			copy(dAtA[i:], encoded)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetStoredTempTradeResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetStoredTempTradeResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetStoredTempTradeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field StoredTempTrade", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if x.StoredTempTrade == nil {
+					x.StoredTempTrade = &StoredTempTrade{}
+				}
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.StoredTempTrade); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_QueryAllStoredTempTradeRequest            protoreflect.MessageDescriptor
+	fd_QueryAllStoredTempTradeRequest_pagination protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_ggezchain_trade_query_proto_init()
+	md_QueryAllStoredTempTradeRequest = File_ggezchain_trade_query_proto.Messages().ByName("QueryAllStoredTempTradeRequest")
+	fd_QueryAllStoredTempTradeRequest_pagination = md_QueryAllStoredTempTradeRequest.Fields().ByName("pagination")
+}
+
+var _ protoreflect.Message = (*fastReflection_QueryAllStoredTempTradeRequest)(nil)
+
+type fastReflection_QueryAllStoredTempTradeRequest QueryAllStoredTempTradeRequest
+
+func (x *QueryAllStoredTempTradeRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryAllStoredTempTradeRequest)(x)
+}
+
+func (x *QueryAllStoredTempTradeRequest) slowProtoReflect() protoreflect.Message {
+	mi := &file_ggezchain_trade_query_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_QueryAllStoredTempTradeRequest_messageType fastReflection_QueryAllStoredTempTradeRequest_messageType
+var _ protoreflect.MessageType = fastReflection_QueryAllStoredTempTradeRequest_messageType{}
+
+type fastReflection_QueryAllStoredTempTradeRequest_messageType struct{}
+
+func (x fastReflection_QueryAllStoredTempTradeRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryAllStoredTempTradeRequest)(nil)
+}
+func (x fastReflection_QueryAllStoredTempTradeRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryAllStoredTempTradeRequest)
+}
+func (x fastReflection_QueryAllStoredTempTradeRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryAllStoredTempTradeRequest
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryAllStoredTempTradeRequest
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Type() protoreflect.MessageType {
+	return _fastReflection_QueryAllStoredTempTradeRequest_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) New() protoreflect.Message {
+	return new(fastReflection_QueryAllStoredTempTradeRequest)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Interface() protoreflect.ProtoMessage {
+	return (*QueryAllStoredTempTradeRequest)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Pagination != nil {
+		value := protoreflect.ValueOfMessage(x.Pagination.ProtoReflect())
+		if !f(fd_QueryAllStoredTempTradeRequest_pagination, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeRequest.pagination":
+		return x.Pagination != nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeRequest.pagination":
+		x.Pagination = nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeRequest.pagination":
+		value := x.Pagination
+		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeRequest does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeRequest.pagination":
+		x.Pagination = value.Message().Interface().(*v1beta1.PageRequest)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeRequest.pagination":
+		if x.Pagination == nil {
+			x.Pagination = new(v1beta1.PageRequest)
+		}
+		return protoreflect.ValueOfMessage(x.Pagination.ProtoReflect())
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeRequest.pagination":
+		m := new(v1beta1.PageRequest)
+		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeRequest"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in ggezchain.trade.QueryAllStoredTempTradeRequest", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_QueryAllStoredTempTradeRequest) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*QueryAllStoredTempTradeRequest)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if x.Pagination != nil {
+			l = options.Size(x.Pagination)
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*QueryAllStoredTempTradeRequest)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.Pagination != nil {
+			encoded, err := options.Marshal(x.Pagination)
+			if err != nil {
+				return protoiface.MarshalOutput{
+					NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+					Buf:               input.Buf,
+				}, err
+			}
+			i -= len(encoded)
+			copy(dAtA[i:], encoded)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*QueryAllStoredTempTradeRequest)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryAllStoredTempTradeRequest: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryAllStoredTempTradeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if x.Pagination == nil {
+					x.Pagination = &v1beta1.PageRequest{}
+				}
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.Pagination); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var _ protoreflect.List = (*_QueryAllStoredTempTradeResponse_1_list)(nil)
+
+type _QueryAllStoredTempTradeResponse_1_list struct {
+	list *[]*StoredTempTrade
+}
+
+func (x *_QueryAllStoredTempTradeResponse_1_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_QueryAllStoredTempTradeResponse_1_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_QueryAllStoredTempTradeResponse_1_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*StoredTempTrade)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_QueryAllStoredTempTradeResponse_1_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*StoredTempTrade)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_QueryAllStoredTempTradeResponse_1_list) AppendMutable() protoreflect.Value {
+	v := new(StoredTempTrade)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_QueryAllStoredTempTradeResponse_1_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_QueryAllStoredTempTradeResponse_1_list) NewElement() protoreflect.Value {
+	v := new(StoredTempTrade)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_QueryAllStoredTempTradeResponse_1_list) IsValid() bool {
+	return x.list != nil
+}
+
+var (
+	md_QueryAllStoredTempTradeResponse                 protoreflect.MessageDescriptor
+	fd_QueryAllStoredTempTradeResponse_storedTempTrade protoreflect.FieldDescriptor
+	fd_QueryAllStoredTempTradeResponse_pagination      protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_ggezchain_trade_query_proto_init()
+	md_QueryAllStoredTempTradeResponse = File_ggezchain_trade_query_proto.Messages().ByName("QueryAllStoredTempTradeResponse")
+	fd_QueryAllStoredTempTradeResponse_storedTempTrade = md_QueryAllStoredTempTradeResponse.Fields().ByName("storedTempTrade")
+	fd_QueryAllStoredTempTradeResponse_pagination = md_QueryAllStoredTempTradeResponse.Fields().ByName("pagination")
+}
+
+var _ protoreflect.Message = (*fastReflection_QueryAllStoredTempTradeResponse)(nil)
+
+type fastReflection_QueryAllStoredTempTradeResponse QueryAllStoredTempTradeResponse
+
+func (x *QueryAllStoredTempTradeResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryAllStoredTempTradeResponse)(x)
+}
+
+func (x *QueryAllStoredTempTradeResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_ggezchain_trade_query_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_QueryAllStoredTempTradeResponse_messageType fastReflection_QueryAllStoredTempTradeResponse_messageType
+var _ protoreflect.MessageType = fastReflection_QueryAllStoredTempTradeResponse_messageType{}
+
+type fastReflection_QueryAllStoredTempTradeResponse_messageType struct{}
+
+func (x fastReflection_QueryAllStoredTempTradeResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryAllStoredTempTradeResponse)(nil)
+}
+func (x fastReflection_QueryAllStoredTempTradeResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryAllStoredTempTradeResponse)
+}
+func (x fastReflection_QueryAllStoredTempTradeResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryAllStoredTempTradeResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryAllStoredTempTradeResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Type() protoreflect.MessageType {
+	return _fastReflection_QueryAllStoredTempTradeResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) New() protoreflect.Message {
+	return new(fastReflection_QueryAllStoredTempTradeResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Interface() protoreflect.ProtoMessage {
+	return (*QueryAllStoredTempTradeResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if len(x.StoredTempTrade) != 0 {
+		value := protoreflect.ValueOfList(&_QueryAllStoredTempTradeResponse_1_list{list: &x.StoredTempTrade})
+		if !f(fd_QueryAllStoredTempTradeResponse_storedTempTrade, value) {
+			return
+		}
+	}
+	if x.Pagination != nil {
+		value := protoreflect.ValueOfMessage(x.Pagination.ProtoReflect())
+		if !f(fd_QueryAllStoredTempTradeResponse_pagination, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.storedTempTrade":
+		return len(x.StoredTempTrade) != 0
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.pagination":
+		return x.Pagination != nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.storedTempTrade":
+		x.StoredTempTrade = nil
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.pagination":
+		x.Pagination = nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.storedTempTrade":
+		if len(x.StoredTempTrade) == 0 {
+			return protoreflect.ValueOfList(&_QueryAllStoredTempTradeResponse_1_list{})
+		}
+		listValue := &_QueryAllStoredTempTradeResponse_1_list{list: &x.StoredTempTrade}
+		return protoreflect.ValueOfList(listValue)
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.pagination":
+		value := x.Pagination
+		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.storedTempTrade":
+		lv := value.List()
+		clv := lv.(*_QueryAllStoredTempTradeResponse_1_list)
+		x.StoredTempTrade = *clv.list
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.pagination":
+		x.Pagination = value.Message().Interface().(*v1beta1.PageResponse)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.storedTempTrade":
+		if x.StoredTempTrade == nil {
+			x.StoredTempTrade = []*StoredTempTrade{}
+		}
+		value := &_QueryAllStoredTempTradeResponse_1_list{list: &x.StoredTempTrade}
+		return protoreflect.ValueOfList(value)
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.pagination":
+		if x.Pagination == nil {
+			x.Pagination = new(v1beta1.PageResponse)
+		}
+		return protoreflect.ValueOfMessage(x.Pagination.ProtoReflect())
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.storedTempTrade":
+		list := []*StoredTempTrade{}
+		return protoreflect.ValueOfList(&_QueryAllStoredTempTradeResponse_1_list{list: &list})
+	case "ggezchain.trade.QueryAllStoredTempTradeResponse.pagination":
+		m := new(v1beta1.PageResponse)
+		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: ggezchain.trade.QueryAllStoredTempTradeResponse"))
+		}
+		panic(fmt.Errorf("message ggezchain.trade.QueryAllStoredTempTradeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in ggezchain.trade.QueryAllStoredTempTradeResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_QueryAllStoredTempTradeResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*QueryAllStoredTempTradeResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if len(x.StoredTempTrade) > 0 {
+			for _, e := range x.StoredTempTrade {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if x.Pagination != nil {
+			l = options.Size(x.Pagination)
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*QueryAllStoredTempTradeResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.Pagination != nil {
+			encoded, err := options.Marshal(x.Pagination)
+			if err != nil {
+				return protoiface.MarshalOutput{
+					NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+					Buf:               input.Buf,
+				}, err
+			}
+			i -= len(encoded)
+			copy(dAtA[i:], encoded)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if len(x.StoredTempTrade) > 0 {
+			for iNdEx := len(x.StoredTempTrade) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.StoredTempTrade[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0xa
+			}
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*QueryAllStoredTempTradeResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryAllStoredTempTradeResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryAllStoredTempTradeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field StoredTempTrade", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.StoredTempTrade = append(x.StoredTempTrade, &StoredTempTrade{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.StoredTempTrade[len(x.StoredTempTrade)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if x.Pagination == nil {
+					x.Pagination = &v1beta1.PageResponse{}
+				}
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.Pagination); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
 // Code generated by protoc-gen-go. DO NOT EDIT.
 // versions:
 // 	protoc-gen-go v1.27.0
@@ -3731,6 +5594,154 @@ func (x *QueryAllStoredTradeResponse) GetPagination() *v1beta1.PageResponse {
 	return nil
 }
 
+type QueryGetStoredTempTradeRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TradeIndex string `protobuf:"bytes,1,opt,name=tradeIndex,proto3" json:"tradeIndex,omitempty"`
+}
+
+func (x *QueryGetStoredTempTradeRequest) Reset() {
+	*x = QueryGetStoredTempTradeRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_ggezchain_trade_query_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueryGetStoredTempTradeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueryGetStoredTempTradeRequest) ProtoMessage() {}
+
+// Deprecated: Use QueryGetStoredTempTradeRequest.ProtoReflect.Descriptor instead.
+func (*QueryGetStoredTempTradeRequest) Descriptor() ([]byte, []int) {
+	return file_ggezchain_trade_query_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *QueryGetStoredTempTradeRequest) GetTradeIndex() string {
+	if x != nil {
+		return x.TradeIndex
+	}
+	return ""
+}
+
+type QueryGetStoredTempTradeResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	StoredTempTrade *StoredTempTrade `protobuf:"bytes,1,opt,name=storedTempTrade,proto3" json:"storedTempTrade,omitempty"`
+}
+
+func (x *QueryGetStoredTempTradeResponse) Reset() {
+	*x = QueryGetStoredTempTradeResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_ggezchain_trade_query_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueryGetStoredTempTradeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueryGetStoredTempTradeResponse) ProtoMessage() {}
+
+// Deprecated: Use QueryGetStoredTempTradeResponse.ProtoReflect.Descriptor instead.
+func (*QueryGetStoredTempTradeResponse) Descriptor() ([]byte, []int) {
+	return file_ggezchain_trade_query_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *QueryGetStoredTempTradeResponse) GetStoredTempTrade() *StoredTempTrade {
+	if x != nil {
+		return x.StoredTempTrade
+	}
+	return nil
+}
+
+type QueryAllStoredTempTradeRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Pagination *v1beta1.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (x *QueryAllStoredTempTradeRequest) Reset() {
+	*x = QueryAllStoredTempTradeRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_ggezchain_trade_query_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueryAllStoredTempTradeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueryAllStoredTempTradeRequest) ProtoMessage() {}
+
+// Deprecated: Use QueryAllStoredTempTradeRequest.ProtoReflect.Descriptor instead.
+func (*QueryAllStoredTempTradeRequest) Descriptor() ([]byte, []int) {
+	return file_ggezchain_trade_query_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *QueryAllStoredTempTradeRequest) GetPagination() *v1beta1.PageRequest {
+	if x != nil {
+		return x.Pagination
+	}
+	return nil
+}
+
+type QueryAllStoredTempTradeResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	StoredTempTrade []*StoredTempTrade    `protobuf:"bytes,1,rep,name=storedTempTrade,proto3" json:"storedTempTrade,omitempty"`
+	Pagination      *v1beta1.PageResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (x *QueryAllStoredTempTradeResponse) Reset() {
+	*x = QueryAllStoredTempTradeResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_ggezchain_trade_query_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueryAllStoredTempTradeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueryAllStoredTempTradeResponse) ProtoMessage() {}
+
+// Deprecated: Use QueryAllStoredTempTradeResponse.ProtoReflect.Descriptor instead.
+func (*QueryAllStoredTempTradeResponse) Descriptor() ([]byte, []int) {
+	return file_ggezchain_trade_query_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *QueryAllStoredTempTradeResponse) GetStoredTempTrade() []*StoredTempTrade {
+	if x != nil {
+		return x.StoredTempTrade
+	}
+	return nil
+}
+
+func (x *QueryAllStoredTempTradeResponse) GetPagination() *v1beta1.PageResponse {
+	if x != nil {
+		return x.Pagination
+	}
+	return nil
+}
+
 var File_ggezchain_trade_query_proto protoreflect.FileDescriptor
 
 var file_ggezchain_trade_query_proto_rawDesc = []byte{
@@ -3750,98 +5761,154 @@ var file_ggezchain_trade_query_proto_rawDesc = []byte{
 	0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x5f, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x1a, 0x22, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72,
 	0x61, 0x64, 0x65, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x5f, 0x74, 0x72, 0x61, 0x64, 0x65,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x14, 0x0a, 0x12, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50,
-	0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x51, 0x0a, 0x13,
-	0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e,
-	0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x42, 0x09, 0xc8, 0xde,
-	0x1f, 0x00, 0xa8, 0xe7, 0xb0, 0x2a, 0x01, 0x52, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x22,
-	0x1b, 0x0a, 0x19, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x54, 0x72, 0x61, 0x64, 0x65,
-	0x49, 0x6e, 0x64, 0x65, 0x78, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x5f, 0x0a, 0x1a,
-	0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64,
-	0x65, 0x78, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x41, 0x0a, 0x0a, 0x54, 0x72,
-	0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b,
-	0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65,
-	0x2e, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x42, 0x04, 0xc8, 0xde, 0x1f,
-	0x00, 0x52, 0x0a, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x22, 0x3c, 0x0a,
-	0x1a, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54,
-	0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x74,
-	0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52,
-	0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x22, 0x63, 0x0a, 0x1b, 0x51,
-	0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61,
-	0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0b, 0x73, 0x74,
-	0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x1c, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64,
-	0x65, 0x2e, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x42, 0x04, 0xc8,
-	0xde, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65,
-	0x22, 0x64, 0x0a, 0x1a, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72,
-	0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x46,
-	0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73, 0x2e, 0x62, 0x61, 0x73, 0x65,
-	0x2e, 0x71, 0x75, 0x65, 0x72, 0x79, 0x2e, 0x76, 0x31, 0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x50,
-	0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x0a, 0x70, 0x61, 0x67, 0x69,
-	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xac, 0x01, 0x0a, 0x1b, 0x51, 0x75, 0x65, 0x72, 0x79,
-	0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0b, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64,
-	0x54, 0x72, 0x61, 0x64, 0x65, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x67, 0x67,
-	0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x53, 0x74,
-	0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52,
-	0x0b, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x47, 0x0a, 0x0a,
-	0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x27, 0x2e, 0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71,
-	0x75, 0x65, 0x72, 0x79, 0x2e, 0x76, 0x31, 0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67,
-	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x32, 0xeb, 0x04, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12,
-	0x7f, 0x0a, 0x06, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x23, 0x2e, 0x67, 0x67, 0x65, 0x7a,
-	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72,
-	0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24,
-	0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65,
-	0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x24, 0x12, 0x22, 0x2f, 0x6d,
-	0x6f, 0x75, 0x73, 0x61, 0x69, 0x62, 0x72, 0x61, 0x68, 0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68,
-	0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x12, 0x96, 0x01, 0x0a, 0x0a, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x12,
-	0x2a, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64,
-	0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49,
-	0x6e, 0x64, 0x65, 0x78, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x67, 0x67,
-	0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75,
-	0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x29,
-	0x12, 0x27, 0x2f, 0x6d, 0x6f, 0x75, 0x73, 0x61, 0x69, 0x62, 0x72, 0x61, 0x68, 0x2f, 0x67, 0x67,
-	0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x74, 0x72,
-	0x61, 0x64, 0x65, 0x5f, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x12, 0xa7, 0x01, 0x0a, 0x0b, 0x53, 0x74,
-	0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x2b, 0x2e, 0x67, 0x67, 0x65, 0x7a,
-	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72,
-	0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65,
-	0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x37, 0x12, 0x35, 0x2f, 0x6d,
-	0x6f, 0x75, 0x73, 0x61, 0x69, 0x62, 0x72, 0x61, 0x68, 0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68,
-	0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64,
-	0x5f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x7b, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64,
-	0x65, 0x78, 0x7d, 0x12, 0x9d, 0x01, 0x0a, 0x0e, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72,
-	0x61, 0x64, 0x65, 0x41, 0x6c, 0x6c, 0x12, 0x2b, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c,
-	0x6c, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e,
-	0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74,
-	0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x30, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2a, 0x12, 0x28, 0x2f, 0x6d, 0x6f, 0x75, 0x73,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x27, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69,
+	0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x5f, 0x74,
+	0x65, 0x6d, 0x70, 0x5f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22,
+	0x14, 0x0a, 0x12, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x51, 0x0a, 0x13, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61,
+	0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a, 0x06,
+	0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x67,
+	0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x50,
+	0x61, 0x72, 0x61, 0x6d, 0x73, 0x42, 0x09, 0xc8, 0xde, 0x1f, 0x00, 0xa8, 0xe7, 0xb0, 0x2a, 0x01,
+	0x52, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x22, 0x1b, 0x0a, 0x19, 0x51, 0x75, 0x65, 0x72,
+	0x79, 0x47, 0x65, 0x74, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x5f, 0x0a, 0x1a, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65,
+	0x74, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x41, 0x0a, 0x0a, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65,
+	0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68,
+	0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49,
+	0x6e, 0x64, 0x65, 0x78, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0a, 0x54, 0x72, 0x61, 0x64,
+	0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x22, 0x3c, 0x0a, 0x1a, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47,
+	0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64,
+	0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49,
+	0x6e, 0x64, 0x65, 0x78, 0x22, 0x63, 0x0a, 0x1b, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74,
+	0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0b, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61,
+	0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x53, 0x74, 0x6f, 0x72, 0x65,
+	0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74,
+	0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x22, 0x64, 0x0a, 0x1a, 0x51, 0x75, 0x65,
+	0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x46, 0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6f,
+	0x73, 0x6d, 0x6f, 0x73, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71, 0x75, 0x65, 0x72, 0x79, 0x2e,
+	0x76, 0x31, 0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x52, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22,
+	0xac, 0x01, 0x0a, 0x1b, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72,
+	0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x44, 0x0a, 0x0b, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x18, 0x01,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e,
+	0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61,
+	0x64, 0x65, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64,
+	0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x47, 0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x63, 0x6f, 0x73, 0x6d,
+	0x6f, 0x73, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71, 0x75, 0x65, 0x72, 0x79, 0x2e, 0x76, 0x31,
+	0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x52, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x40,
+	0x0a, 0x1e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64,
+	0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x1e, 0x0a, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78,
+	0x22, 0x73, 0x0a, 0x1f, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72,
+	0x65, 0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x50, 0x0a, 0x0f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x65, 0x6d,
+	0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67,
+	0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x53,
+	0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x42, 0x04,
+	0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x65, 0x6d, 0x70,
+	0x54, 0x72, 0x61, 0x64, 0x65, 0x22, 0x68, 0x0a, 0x1e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c,
+	0x6c, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x46, 0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6f,
+	0x73, 0x6d, 0x6f, 0x73, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71, 0x75, 0x65, 0x72, 0x79, 0x2e,
+	0x76, 0x31, 0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x52, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22,
+	0xbc, 0x01, 0x0a, 0x1f, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72,
+	0x65, 0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x50, 0x0a, 0x0f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x65, 0x6d,
+	0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67,
+	0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x53,
+	0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x42, 0x04,
+	0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x65, 0x6d, 0x70,
+	0x54, 0x72, 0x61, 0x64, 0x65, 0x12, 0x47, 0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x63, 0x6f, 0x73, 0x6d,
+	0x6f, 0x73, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71, 0x75, 0x65, 0x72, 0x79, 0x2e, 0x76, 0x31,
+	0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x52, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x32, 0xd7,
+	0x07, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x7f, 0x0a, 0x06, 0x50, 0x61, 0x72, 0x61,
+	0x6d, 0x73, 0x12, 0x23, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74,
+	0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68,
+	0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50,
+	0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2a, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x24, 0x12, 0x22, 0x2f, 0x6d, 0x6f, 0x75, 0x73, 0x61, 0x69, 0x62, 0x72,
+	0x61, 0x68, 0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61,
+	0x64, 0x65, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x96, 0x01, 0x0a, 0x0a, 0x54, 0x72,
+	0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x12, 0x2a, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79,
+	0x47, 0x65, 0x74, 0x54, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e,
+	0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x54,
+	0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x2f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x29, 0x12, 0x27, 0x2f, 0x6d, 0x6f, 0x75, 0x73,
 	0x61, 0x69, 0x62, 0x72, 0x61, 0x68, 0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e,
-	0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x5f, 0x74, 0x72,
-	0x61, 0x64, 0x65, 0x42, 0xa0, 0x01, 0x0a, 0x13, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x67, 0x65, 0x7a,
-	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x42, 0x0a, 0x51, 0x75, 0x65,
-	0x72, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x20, 0x63, 0x6f, 0x73, 0x6d, 0x6f,
-	0x73, 0x73, 0x64, 0x6b, 0x2e, 0x69, 0x6f, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x67, 0x67, 0x65, 0x7a,
-	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0xa2, 0x02, 0x03, 0x47, 0x54,
-	0x58, 0xaa, 0x02, 0x0f, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x54, 0x72,
-	0x61, 0x64, 0x65, 0xca, 0x02, 0x0f, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c,
-	0x54, 0x72, 0x61, 0x64, 0x65, 0xe2, 0x02, 0x1b, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69,
-	0x6e, 0x5c, 0x54, 0x72, 0x61, 0x64, 0x65, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64,
-	0x61, 0x74, 0x61, 0xea, 0x02, 0x10, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x3a,
-	0x3a, 0x54, 0x72, 0x61, 0x64, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x5f, 0x69, 0x6e, 0x64,
+	0x65, 0x78, 0x12, 0xa7, 0x01, 0x0a, 0x0b, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61,
+	0x64, 0x65, 0x12, 0x2b, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74,
+	0x72, 0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f,
+	0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2c, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64,
+	0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64,
+	0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x37, 0x12, 0x35, 0x2f, 0x6d, 0x6f, 0x75, 0x73, 0x61, 0x69, 0x62, 0x72,
+	0x61, 0x68, 0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61,
+	0x64, 0x65, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x5f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f,
+	0x7b, 0x74, 0x72, 0x61, 0x64, 0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x7d, 0x12, 0x9d, 0x01, 0x0a,
+	0x0e, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61, 0x64, 0x65, 0x41, 0x6c, 0x6c, 0x12,
+	0x2b, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64,
+	0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64,
+	0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67,
+	0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x51,
+	0x75, 0x65, 0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x72, 0x61,
+	0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x30, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x2a, 0x12, 0x28, 0x2f, 0x6d, 0x6f, 0x75, 0x73, 0x61, 0x69, 0x62, 0x72, 0x61, 0x68, 0x2f,
+	0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f,
+	0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x5f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x12, 0xb8, 0x01, 0x0a,
+	0x0f, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65,
+	0x12, 0x2f, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61,
+	0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65,
+	0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x30, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72,
+	0x61, 0x64, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x74, 0x6f, 0x72,
+	0x65, 0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x42, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3c, 0x12, 0x3a, 0x2f, 0x6d, 0x6f,
+	0x75, 0x73, 0x61, 0x69, 0x62, 0x72, 0x61, 0x68, 0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61,
+	0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x5f,
+	0x74, 0x65, 0x6d, 0x70, 0x5f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x7b, 0x74, 0x72, 0x61, 0x64,
+	0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x7d, 0x12, 0xae, 0x01, 0x0a, 0x12, 0x53, 0x74, 0x6f, 0x72,
+	0x65, 0x64, 0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x41, 0x6c, 0x6c, 0x12, 0x2f,
+	0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65,
+	0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x54,
+	0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x30, 0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64,
+	0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x41, 0x6c, 0x6c, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64,
+	0x54, 0x65, 0x6d, 0x70, 0x54, 0x72, 0x61, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x35, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2f, 0x12, 0x2d, 0x2f, 0x6d, 0x6f, 0x75, 0x73,
+	0x61, 0x69, 0x62, 0x72, 0x61, 0x68, 0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e,
+	0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x5f, 0x74, 0x65,
+	0x6d, 0x70, 0x5f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x42, 0xa0, 0x01, 0x0a, 0x13, 0x63, 0x6f, 0x6d,
+	0x2e, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x74, 0x72, 0x61, 0x64, 0x65,
+	0x42, 0x0a, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x20,
+	0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73, 0x73, 0x64, 0x6b, 0x2e, 0x69, 0x6f, 0x2f, 0x61, 0x70, 0x69,
+	0x2f, 0x67, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65,
+	0xa2, 0x02, 0x03, 0x47, 0x54, 0x58, 0xaa, 0x02, 0x0f, 0x47, 0x67, 0x65, 0x7a, 0x63, 0x68, 0x61,
+	0x69, 0x6e, 0x2e, 0x54, 0x72, 0x61, 0x64, 0x65, 0xca, 0x02, 0x0f, 0x47, 0x67, 0x65, 0x7a, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x5c, 0x54, 0x72, 0x61, 0x64, 0x65, 0xe2, 0x02, 0x1b, 0x47, 0x67, 0x65,
+	0x7a, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x54, 0x72, 0x61, 0x64, 0x65, 0x5c, 0x47, 0x50, 0x42,
+	0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x10, 0x47, 0x67, 0x65, 0x7a, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x3a, 0x3a, 0x54, 0x72, 0x61, 0x64, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3856,42 +5923,55 @@ func file_ggezchain_trade_query_proto_rawDescGZIP() []byte {
 	return file_ggezchain_trade_query_proto_rawDescData
 }
 
-var file_ggezchain_trade_query_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_ggezchain_trade_query_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_ggezchain_trade_query_proto_goTypes = []interface{}{
-	(*QueryParamsRequest)(nil),          // 0: ggezchain.trade.QueryParamsRequest
-	(*QueryParamsResponse)(nil),         // 1: ggezchain.trade.QueryParamsResponse
-	(*QueryGetTradeIndexRequest)(nil),   // 2: ggezchain.trade.QueryGetTradeIndexRequest
-	(*QueryGetTradeIndexResponse)(nil),  // 3: ggezchain.trade.QueryGetTradeIndexResponse
-	(*QueryGetStoredTradeRequest)(nil),  // 4: ggezchain.trade.QueryGetStoredTradeRequest
-	(*QueryGetStoredTradeResponse)(nil), // 5: ggezchain.trade.QueryGetStoredTradeResponse
-	(*QueryAllStoredTradeRequest)(nil),  // 6: ggezchain.trade.QueryAllStoredTradeRequest
-	(*QueryAllStoredTradeResponse)(nil), // 7: ggezchain.trade.QueryAllStoredTradeResponse
-	(*Params)(nil),                      // 8: ggezchain.trade.Params
-	(*TradeIndex)(nil),                  // 9: ggezchain.trade.TradeIndex
-	(*StoredTrade)(nil),                 // 10: ggezchain.trade.StoredTrade
-	(*v1beta1.PageRequest)(nil),         // 11: cosmos.base.query.v1beta1.PageRequest
-	(*v1beta1.PageResponse)(nil),        // 12: cosmos.base.query.v1beta1.PageResponse
+	(*QueryParamsRequest)(nil),              // 0: ggezchain.trade.QueryParamsRequest
+	(*QueryParamsResponse)(nil),             // 1: ggezchain.trade.QueryParamsResponse
+	(*QueryGetTradeIndexRequest)(nil),       // 2: ggezchain.trade.QueryGetTradeIndexRequest
+	(*QueryGetTradeIndexResponse)(nil),      // 3: ggezchain.trade.QueryGetTradeIndexResponse
+	(*QueryGetStoredTradeRequest)(nil),      // 4: ggezchain.trade.QueryGetStoredTradeRequest
+	(*QueryGetStoredTradeResponse)(nil),     // 5: ggezchain.trade.QueryGetStoredTradeResponse
+	(*QueryAllStoredTradeRequest)(nil),      // 6: ggezchain.trade.QueryAllStoredTradeRequest
+	(*QueryAllStoredTradeResponse)(nil),     // 7: ggezchain.trade.QueryAllStoredTradeResponse
+	(*QueryGetStoredTempTradeRequest)(nil),  // 8: ggezchain.trade.QueryGetStoredTempTradeRequest
+	(*QueryGetStoredTempTradeResponse)(nil), // 9: ggezchain.trade.QueryGetStoredTempTradeResponse
+	(*QueryAllStoredTempTradeRequest)(nil),  // 10: ggezchain.trade.QueryAllStoredTempTradeRequest
+	(*QueryAllStoredTempTradeResponse)(nil), // 11: ggezchain.trade.QueryAllStoredTempTradeResponse
+	(*Params)(nil),                          // 12: ggezchain.trade.Params
+	(*TradeIndex)(nil),                      // 13: ggezchain.trade.TradeIndex
+	(*StoredTrade)(nil),                     // 14: ggezchain.trade.StoredTrade
+	(*v1beta1.PageRequest)(nil),             // 15: cosmos.base.query.v1beta1.PageRequest
+	(*v1beta1.PageResponse)(nil),            // 16: cosmos.base.query.v1beta1.PageResponse
+	(*StoredTempTrade)(nil),                 // 17: ggezchain.trade.StoredTempTrade
 }
 var file_ggezchain_trade_query_proto_depIdxs = []int32{
-	8,  // 0: ggezchain.trade.QueryParamsResponse.params:type_name -> ggezchain.trade.Params
-	9,  // 1: ggezchain.trade.QueryGetTradeIndexResponse.TradeIndex:type_name -> ggezchain.trade.TradeIndex
-	10, // 2: ggezchain.trade.QueryGetStoredTradeResponse.storedTrade:type_name -> ggezchain.trade.StoredTrade
-	11, // 3: ggezchain.trade.QueryAllStoredTradeRequest.pagination:type_name -> cosmos.base.query.v1beta1.PageRequest
-	10, // 4: ggezchain.trade.QueryAllStoredTradeResponse.storedTrade:type_name -> ggezchain.trade.StoredTrade
-	12, // 5: ggezchain.trade.QueryAllStoredTradeResponse.pagination:type_name -> cosmos.base.query.v1beta1.PageResponse
-	0,  // 6: ggezchain.trade.Query.Params:input_type -> ggezchain.trade.QueryParamsRequest
-	2,  // 7: ggezchain.trade.Query.TradeIndex:input_type -> ggezchain.trade.QueryGetTradeIndexRequest
-	4,  // 8: ggezchain.trade.Query.StoredTrade:input_type -> ggezchain.trade.QueryGetStoredTradeRequest
-	6,  // 9: ggezchain.trade.Query.StoredTradeAll:input_type -> ggezchain.trade.QueryAllStoredTradeRequest
-	1,  // 10: ggezchain.trade.Query.Params:output_type -> ggezchain.trade.QueryParamsResponse
-	3,  // 11: ggezchain.trade.Query.TradeIndex:output_type -> ggezchain.trade.QueryGetTradeIndexResponse
-	5,  // 12: ggezchain.trade.Query.StoredTrade:output_type -> ggezchain.trade.QueryGetStoredTradeResponse
-	7,  // 13: ggezchain.trade.Query.StoredTradeAll:output_type -> ggezchain.trade.QueryAllStoredTradeResponse
-	10, // [10:14] is the sub-list for method output_type
-	6,  // [6:10] is the sub-list for method input_type
-	6,  // [6:6] is the sub-list for extension type_name
-	6,  // [6:6] is the sub-list for extension extendee
-	0,  // [0:6] is the sub-list for field type_name
+	12, // 0: ggezchain.trade.QueryParamsResponse.params:type_name -> ggezchain.trade.Params
+	13, // 1: ggezchain.trade.QueryGetTradeIndexResponse.TradeIndex:type_name -> ggezchain.trade.TradeIndex
+	14, // 2: ggezchain.trade.QueryGetStoredTradeResponse.storedTrade:type_name -> ggezchain.trade.StoredTrade
+	15, // 3: ggezchain.trade.QueryAllStoredTradeRequest.pagination:type_name -> cosmos.base.query.v1beta1.PageRequest
+	14, // 4: ggezchain.trade.QueryAllStoredTradeResponse.storedTrade:type_name -> ggezchain.trade.StoredTrade
+	16, // 5: ggezchain.trade.QueryAllStoredTradeResponse.pagination:type_name -> cosmos.base.query.v1beta1.PageResponse
+	17, // 6: ggezchain.trade.QueryGetStoredTempTradeResponse.storedTempTrade:type_name -> ggezchain.trade.StoredTempTrade
+	15, // 7: ggezchain.trade.QueryAllStoredTempTradeRequest.pagination:type_name -> cosmos.base.query.v1beta1.PageRequest
+	17, // 8: ggezchain.trade.QueryAllStoredTempTradeResponse.storedTempTrade:type_name -> ggezchain.trade.StoredTempTrade
+	16, // 9: ggezchain.trade.QueryAllStoredTempTradeResponse.pagination:type_name -> cosmos.base.query.v1beta1.PageResponse
+	0,  // 10: ggezchain.trade.Query.Params:input_type -> ggezchain.trade.QueryParamsRequest
+	2,  // 11: ggezchain.trade.Query.TradeIndex:input_type -> ggezchain.trade.QueryGetTradeIndexRequest
+	4,  // 12: ggezchain.trade.Query.StoredTrade:input_type -> ggezchain.trade.QueryGetStoredTradeRequest
+	6,  // 13: ggezchain.trade.Query.StoredTradeAll:input_type -> ggezchain.trade.QueryAllStoredTradeRequest
+	8,  // 14: ggezchain.trade.Query.StoredTempTrade:input_type -> ggezchain.trade.QueryGetStoredTempTradeRequest
+	10, // 15: ggezchain.trade.Query.StoredTempTradeAll:input_type -> ggezchain.trade.QueryAllStoredTempTradeRequest
+	1,  // 16: ggezchain.trade.Query.Params:output_type -> ggezchain.trade.QueryParamsResponse
+	3,  // 17: ggezchain.trade.Query.TradeIndex:output_type -> ggezchain.trade.QueryGetTradeIndexResponse
+	5,  // 18: ggezchain.trade.Query.StoredTrade:output_type -> ggezchain.trade.QueryGetStoredTradeResponse
+	7,  // 19: ggezchain.trade.Query.StoredTradeAll:output_type -> ggezchain.trade.QueryAllStoredTradeResponse
+	9,  // 20: ggezchain.trade.Query.StoredTempTrade:output_type -> ggezchain.trade.QueryGetStoredTempTradeResponse
+	11, // 21: ggezchain.trade.Query.StoredTempTradeAll:output_type -> ggezchain.trade.QueryAllStoredTempTradeResponse
+	16, // [16:22] is the sub-list for method output_type
+	10, // [10:16] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_ggezchain_trade_query_proto_init() }
@@ -3902,6 +5982,7 @@ func file_ggezchain_trade_query_proto_init() {
 	file_ggezchain_trade_params_proto_init()
 	file_ggezchain_trade_trade_index_proto_init()
 	file_ggezchain_trade_stored_trade_proto_init()
+	file_ggezchain_trade_stored_temp_trade_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_ggezchain_trade_query_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*QueryParamsRequest); i {
@@ -3999,6 +6080,54 @@ func file_ggezchain_trade_query_proto_init() {
 				return nil
 			}
 		}
+		file_ggezchain_trade_query_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueryGetStoredTempTradeRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_ggezchain_trade_query_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueryGetStoredTempTradeResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_ggezchain_trade_query_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueryAllStoredTempTradeRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_ggezchain_trade_query_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueryAllStoredTempTradeResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -4006,7 +6135,7 @@ func file_ggezchain_trade_query_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_ggezchain_trade_query_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
