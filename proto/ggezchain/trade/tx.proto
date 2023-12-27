@@ -8,7 +8,7 @@ import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "ggezchain/trade/params.proto";
 
-option go_package = "github.com/mousaibrah/ggezchain/x/trade/types";
+option go_package = "github.com/mousaibrah/ggezchains/x/trade/types";
 
 // Msg defines the Msg service.
 service Msg {

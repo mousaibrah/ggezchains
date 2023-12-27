@@ -5,7 +5,7 @@ import (
 	serverconfig "github.com/cosmos/cosmos-sdk/server/config"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/mousaibrah/ggezchain/app"
+	"github.com/mousaibrah/ggezchains/app"
 )
 
 func initSDKConfig() {

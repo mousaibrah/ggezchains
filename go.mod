@@ -1,4 +1,4 @@
-module github.com/mousaibrah/ggezchain
+module github.com/mousaibrah/ggezchains
 
 go 1.21
 

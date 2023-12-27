@@ -69,9 +69,9 @@ import (
 	ibcfeetypes "github.com/cosmos/ibc-go/v8/modules/apps/29-fee/types"
 	ibctransfertypes "github.com/cosmos/ibc-go/v8/modules/apps/transfer/types"
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
-	trademodulev1 "github.com/mousaibrah/ggezchain/api/ggezchain/trade/module"
-	_ "github.com/mousaibrah/ggezchain/x/trade/module" // import for side-effects
-	trademoduletypes "github.com/mousaibrah/ggezchain/x/trade/types"
+	trademodulev1 "github.com/mousaibrah/ggezchains/api/ggezchain/trade/module"
+	_ "github.com/mousaibrah/ggezchains/x/trade/module" // import for side-effects
+	trademoduletypes "github.com/mousaibrah/ggezchains/x/trade/types"
 	"google.golang.org/protobuf/types/known/durationpb"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
@@ -290,8 +290,10 @@ var (
 				Config: appconfig.WrapAny(&feegrantmodulev1.Module{}),
 			},
 			{
-				Name:   govtypes.ModuleName,
-				Config: appconfig.WrapAny(&govmodulev1.Module{}),
+				Name: govtypes.ModuleName,
+				Config: appconfig.WrapAny(&govmodulev1.Module{
+					MaxMetadataLen: 12500,
+				}),
 			},
 			{
 				Name:   crisistypes.ModuleName,

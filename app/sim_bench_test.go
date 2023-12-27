@@ -14,7 +14,7 @@ import (
 	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
 	"github.com/stretchr/testify/require"
 
-	"github.com/mousaibrah/ggezchain/app"
+	"github.com/mousaibrah/ggezchains/app"
 )
 
 // Profile with:

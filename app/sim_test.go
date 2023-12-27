@@ -31,7 +31,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 
-	"github.com/mousaibrah/ggezchain/app"
+	"github.com/mousaibrah/ggezchains/app"
 )
 
 const (

@@ -8,7 +8,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/mousaibrah/ggezchain/x/trade/types"
+	"github.com/mousaibrah/ggezchains/x/trade/types"
 )
 
 type (
@@ -21,9 +21,8 @@ type (
 		// should be the x/gov module account.
 		authority string
 
-		bankKeeper types.BankKeeper
+		bankKeeper    types.BankKeeper
 		stakingKeeper types.StakingKeeper
-
 	}
 )
 
@@ -47,9 +46,8 @@ func NewKeeper(
 		authority:    authority,
 		logger:       logger,
 
-		bankKeeper: bankKeeper,
+		bankKeeper:    bankKeeper,
 		stakingKeeper: stakingKeeper,
-
 	}
 }
 
