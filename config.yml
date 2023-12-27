@@ -1,21 +1,21 @@
 version: 1
 accounts:
-- name: alice
+- name: mutaz
   coins:
-  - 20000token
+  - 20000000000uggez
   - 200000000stake
-- name: bob
+- name: mohd
   coins:
-  - 10000token
+  - 10000000000uggez
   - 100000000stake
 client:
   openapi:
     path: docs/static/openapi.yml
 faucet:
-  name: bob
+  name: mohd
   coins:
-  - 5token
+  - 5000000uggez
   - 100000stake
 validators:
-- name: alice
+- name: mutaz
   bonded: 100000000stake

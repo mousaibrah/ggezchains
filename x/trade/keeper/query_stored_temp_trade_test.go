@@ -43,7 +43,7 @@ func TestStoredTempTradeQuerySingle(t *testing.T) {
 		{
 			desc: "KeyNotFound",
 			request: &types.QueryGetStoredTempTradeRequest{
-				TradeIndex: strconv.Itoa(100000),
+				TradeIndex: uint64(100000),
 			},
 			err: status.Error(codes.NotFound, "not found"),
 		},
