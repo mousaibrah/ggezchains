@@ -5,7 +5,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/runtime"
 
-	"github.com/mousaibrah/ggezchains/x/trade/types"
+	"github.com/mousaibrah/ggezchain/x/trade/types"
 )
 
 // GetParams get all parameters as types.Params

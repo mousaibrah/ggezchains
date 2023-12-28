@@ -8,7 +8,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/mousaibrah/ggezchains/x/trade/types"
+	"github.com/mousaibrah/ggezchain/x/trade/types"
 )
 
 type (

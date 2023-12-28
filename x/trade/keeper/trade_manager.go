@@ -12,7 +12,7 @@ import (
 
 	errors "cosmossdk.io/errors"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/mousaibrah/ggezchains/x/trade/types"
+	"github.com/mousaibrah/ggezchain/x/trade/types"
 )
 
 type TradeDataObject struct {
@@ -57,7 +57,6 @@ type ChainACL struct {
 }
 
 func (k Keeper) IsAddressAllowed(stakingKeeper types.StakingKeeper, goCtx context.Context, address string, msgType string) (isAllowed bool, err error) {
-
 	ctx := sdk.UnwrapSDKContext(goCtx)
 	isAddressWhitelisted, err := k.IsAddressWhitelisted(address, msgType)
 
@@ -91,7 +90,6 @@ func (k Keeper) IsAddressWhitelisted(address string, msgType string) (isAddressW
 	if msgType == types.CreateTrade {
 		// Loop through the validators for Allowed Makers
 		for _, maker := range chainACL.Trade.AllowedMakers {
-			LogFileExt(maker)
 			if address == maker.Address {
 				isWhitelisted = true
 				break
@@ -173,12 +171,10 @@ func (k Keeper) IsAddressLinkedToValidator(stakingKeeper types.StakingKeeper, go
 	// Loop through the validators
 	for _, validator := range chainValidators {
 		valAddress, _ := sdk.ValAddressFromBech32(validator.OperatorAddress)
-		LogFileExt("validator.OperatorAddress")
-		LogFileExt(validator.OperatorAddress)
-		LogFileExt(valAddress)
 
-		_, err := stakingKeeper.GetDelegation(ctx, accAddress, valAddress)
-		if err != nil {
+		delegations, _ := stakingKeeper.GetDelegation(ctx, accAddress, valAddress)
+
+		if delegations.DelegatorAddress != "" {
 			isLinked = true
 			break
 		}

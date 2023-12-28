@@ -1,3 +1,18 @@
-CustomLog: 2023/12/27 10:56:25 trade_manager.go:369: /home/mousa
-CustomLog: 2023/12/27 10:56:25 trade_manager.go:369: ggez16h5w2u8yg3lzdjcjvvtgtfc2sdamm2tvpks8lv
-CustomLog: 2023/12/27 10:56:25 trade_manager.go:369: CreateTrade
+CustomLog: 2023/12/27 22:58:33 trade_manager.go:370: {mutaz ggez1emel340t3w3g2fdemhpk9vkrcrvav5s4e8x2qh}
+CustomLog: 2023/12/27 22:58:33 trade_manager.go:370: validator.OperatorAddress
+CustomLog: 2023/12/27 22:58:33 trade_manager.go:370: ggezvaloper1emel340t3w3g2fdemhpk9vkrcrvav5s4negspg
+CustomLog: 2023/12/27 22:58:33 trade_manager.go:370: CEF3F8D5EB8BA28525B9DDC362B2C3C0D9D65215
+CustomLog: 2023/12/27 22:58:33 trade_manager.go:370: delegations
+CustomLog: 2023/12/27 22:58:33 trade_manager.go:370: {ggez1emel340t3w3g2fdemhpk9vkrcrvav5s4e8x2qh ggezvaloper1emel340t3w3g2fdemhpk9vkrcrvav5s4negspg 100000000.000000000000000000}
+CustomLog: 2023/12/28 08:55:19 trade_manager.go:370: {mutaz ggez1khaafy5yhlqwfpj2xrwdh8g0qr2xqa25req8hl}
+CustomLog: 2023/12/28 08:55:19 trade_manager.go:370: validator.OperatorAddress
+CustomLog: 2023/12/28 08:55:19 trade_manager.go:370: ggezvaloper1khaafy5yhlqwfpj2xrwdh8g0qr2xqa25f8wakq
+CustomLog: 2023/12/28 08:55:19 trade_manager.go:370: B5FBD49284BFC0E4864A30DCDB9D0F00D4607554
+CustomLog: 2023/12/28 08:55:19 trade_manager.go:370: delegations
+CustomLog: 2023/12/28 08:55:19 trade_manager.go:370: {ggez1khaafy5yhlqwfpj2xrwdh8g0qr2xqa25req8hl ggezvaloper1khaafy5yhlqwfpj2xrwdh8g0qr2xqa25f8wakq 100000000.000000000000000000}
+CustomLog: 2023/12/28 09:01:09 trade_manager.go:370: {mutaz ggez13lrvmm03x0fepwhp9z7msx72d8686juks6kq45}
+CustomLog: 2023/12/28 09:01:09 trade_manager.go:370: validator.OperatorAddress
+CustomLog: 2023/12/28 09:01:09 trade_manager.go:370: ggezvaloper13lrvmm03x0fepwhp9z7msx72d8686juk6yc65t
+CustomLog: 2023/12/28 09:01:09 trade_manager.go:370: 8FC6CDEDF133D390BAE128BDB81BCA69F47D4B96
+CustomLog: 2023/12/28 09:01:09 trade_manager.go:370: delegations
+CustomLog: 2023/12/28 09:01:09 trade_manager.go:370: {ggez13lrvmm03x0fepwhp9z7msx72d8686juks6kq45 ggezvaloper13lrvmm03x0fepwhp9z7msx72d8686juk6yc65t 100000000.000000000000000000}

@@ -20,9 +20,9 @@ import (
 
 	// this line is used by starport scaffolding # 1
 
-	modulev1 "github.com/mousaibrah/ggezchains/api/ggezchain/trade/module"
-	"github.com/mousaibrah/ggezchains/x/trade/keeper"
-	"github.com/mousaibrah/ggezchains/x/trade/types"
+	modulev1 "github.com/mousaibrah/ggezchain/api/ggezchain/trade/module"
+	"github.com/mousaibrah/ggezchain/x/trade/keeper"
+	"github.com/mousaibrah/ggezchain/x/trade/types"
 )
 
 var (

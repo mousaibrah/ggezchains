@@ -3,21 +3,21 @@
       "allowed_makers": [
         {
           "name": "mutaz",
-          "address": "ggez16h5w2u8yg3lzdjcjvvtgtfc2sdamm2tvpks8lv"
+          "address": "ggez13lrvmm03x0fepwhp9z7msx72d8686juks6kq45"
         },
         {
-          "name": "mohd",ggez16h5w2u8yg3lzdjcjvvtgtfc2sdamm2tvpks8lv
-          "address": "ggez1yea09mpvwng9an64ceg0ucxergjehl8cya96hw"
+          "name": "mohd",
+          "address": "ggez1uvqfq53dd5t00u3hth0l6szz9tadrxguxkxurg"
         }
       ],
       "allowed_checkers": [
         {
           "name": "mutaz",
-          "address": "ggez16h5w2u8yg3lzdjcjvvtgtfc2sdamm2tvpks8lv"
+          "address": "ggez13lrvmm03x0fepwhp9z7msx72d8686juks6kq45"
         },
         {
           "name": "mohd",
-          "address": "ggez1yea09mpvwng9an64ceg0ucxergjehl8cya96hw"
+          "address": "ggez1uvqfq53dd5t00u3hth0l6szz9tadrxguxkxurg"
         }
       ]
     }

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/mousaibrah/ggezchains/x/trade/types"
+	"github.com/mousaibrah/ggezchain/x/trade/types"
 )
 
 func (k msgServer) CreateTrade(goCtx context.Context, msg *types.MsgCreateTrade) (*types.MsgCreateTradeResponse, error) {
@@ -14,11 +14,11 @@ func (k msgServer) CreateTrade(goCtx context.Context, msg *types.MsgCreateTrade)
 	if !isValidTradeDataObject {
 		return nil, validateTradeDataErr
 	}
-	// isAllowed, _ := k.IsAddressAllowed(k.stakingKeeper, ctx, msg.Creator, types.CreateTrade)
-	// if !isAllowed {
-	// 	// panic("you don't have permission to perform this action")
-	// 	return nil, types.ErrInvalidMakerPermission
-	// }
+	isAllowed, _ := k.IsAddressAllowed(k.stakingKeeper, ctx, msg.Creator, types.CreateTrade)
+	if !isAllowed {
+		// panic("you don't have permission to perform this action")
+		return nil, types.ErrInvalidMakerPermission
+	}
 	currentTime := time.Now()
 	formattedDate := currentTime.Format("2006-01-02 03:04")
 

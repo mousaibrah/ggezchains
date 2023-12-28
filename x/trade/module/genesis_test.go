@@ -3,10 +3,10 @@ package trade_test
 import (
 	"testing"
 
-	keepertest "github.com/mousaibrah/ggezchains/testutil/keeper"
-	"github.com/mousaibrah/ggezchains/testutil/nullify"
-	trade "github.com/mousaibrah/ggezchains/x/trade/module"
-	"github.com/mousaibrah/ggezchains/x/trade/types"
+	keepertest "github.com/mousaibrah/ggezchain/testutil/keeper"
+	"github.com/mousaibrah/ggezchain/testutil/nullify"
+	trade "github.com/mousaibrah/ggezchain/x/trade/module"
+	"github.com/mousaibrah/ggezchain/x/trade/types"
 	"github.com/stretchr/testify/require"
 )
 
